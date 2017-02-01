@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ead xmlns="http://ead3.archivists.org/schema/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ead3.archivists.org/schema/  ../../schemas/ead3.xsd">
+	<!--A required child element of <ead> for recording bibliographic and administrative information about an EAD instance.-->
+	<control>
+		<!--Record Identifier. A required child element of <control> that designates a unique identifier for the EAD instance.-->
+		<recordid>eadc4791-51e9-4e74-b1fa-c18035c17cda</recordid>
+		<filedesc>
+			<!--Title Statement. A required child element of <filedesc> that binds together information about the name of an encoded finding aid and those responsible for its content.-->
+			<titlestmt>
+				<titleproper>SMURF ERMS metadata</titleproper>
+			</titlestmt>
+			<!--Note Statement. A child element of notestmt, used to provide a general note related to the EAD instance.-->
+			<notestmt>
+				<controlnote>
+					<!--Text "This EAD file is compliant with the SMURF ERMS Specification" or the type of the record (e.g. memo) if available.-->
+					<p>memo</p>
+				</controlnote>
+			</notestmt>
+		</filedesc>
+		<!--A required child element of <control> that records the current version status of the EAD instance.-->
+		<maintenancestatus value="new"></maintenancestatus>
+		<maintenanceagency>
+			<agencyname>The National Archives of Estonia</agencyname>
+		</maintenanceagency>
+		<languagedeclaration>
+			<language>Language</language>
+			<script>Script</script>
+		</languagedeclaration>
+		<maintenancehistory>
+			<maintenanceevent>
+				<eventtype value="created"></eventtype>
+				<eventdatetime>2016-10-17T10:14:28.8200000</eventdatetime>
+				<agenttype value="machine"></agenttype>
+				<agent>UAM</agent>
+			</maintenanceevent>
+		</maintenancehistory>
+		<!--References to publications and other materials used for description-->
+		<sources>
+			<source><sourceentry>Source</sourceentry></source>
+		</sources>
+	</control>
+	<!--Archival Description. A required child element of <ead> that binds together all of the archival descriptive information in an EAD instance.-->
+	<archdesc level="fonds">
+		<did>
+			<unitid label="current">ERA.14</unitid>
+			<abstract>This EAD file is compliant with the SMURF ERMS Specification, Version 1.7.</abstract>
+			<origination label="creator">
+				<name>
+					<part>Ministry of Economics</part>
+				</name>
+			</origination>
+		</did>
+		<fileplan id="a3cab234-3b2e-4b16-8529-4b25bb0d4250">
+			<head>Classification Schema</head>
+			<p>Classification schema of the Ministry of Economics 
+				<date localtype="PeriodBegin"> standarddate="1978-02-14">14 February 1978</date>
+				<date localtype="PeriodEnd">  standarddate="1980-01-13">13 January 1980</date>
+			</p>
+			<chronlist>
+				<chronitem>
+					<datesingle standarddate="1978-01-02">02 January 1978 </datesingle>
+					<event>Created</event>
+				</chronitem>
+				<chronitem>
+					<datesingle standarddate="1983-01-22">22 January 1983 </datesingle>
+					<event>Destroyed</event>
+				</chronitem>	
+			</chronlist>
+			<fileplan id="b3cab234-3b2e-4b16-8529-4b25bb0d4250">
+				<head>LEGAL</head>
+				<p>Includes records regarding legal affairs
+					<date localtype="PeriodBegin"> standarddate="1978-02-14">14 February 1978</date>
+					<date localtype="PeriodEnd">  standarddate="1980-01-13">13 January 1980</date>
+				</p>
+				<chronlist>
+					<chronitem>
+						<datesingle standarddate="1978-02-02">02 February 1978 </datesingle>
+						<event>Created</event>
+					</chronitem>
+				</chronlist>
+				<fileplan id="c3cab234-3b2e-4b16-8529-4b25bb0d4250">
+					<head>Legislation</head>
+					<p>Includes correspondence, discussion papers, legal documents concerning Acts, Regulations, Bills, Judgements and amendments to them
+						<date localtype="PeriodBegin"> standarddate="1978-02-14">14 February 1978</date>
+						<date localtype="PeriodEnd">  standarddate="1980-01-13">13 January 1980</date>
+					</p>
+					<chronlist>
+						<chronitem>
+							<datesingle standarddate="1978-03-22">22 March 1978 </datesingle>
+							<event>Created</event>
+						</chronitem>	
+					</chronlist>
+				</fileplan>
+				<fileplan id="d3cab234-3b2e-4b16-8529-4b25bb0d4250">
+					<head>Contracts and Agreements</head>
+					<p>Includes contracts and agreements with external parties
+						<date localtype="PeriodBegin"> standarddate="1978-02-14">14 February 1978</date>
+						<date localtype="PeriodEnd">  standarddate="1980-01-13">13 January 1980</date>
+					</p>
+					<chronlist>
+						<chronitem>
+							<datesingle standarddate="1978-01-02">02 January 1978 </datesingle>
+							<event>Created</event>
+						</chronitem>
+						<chronitem>
+							<datesingle standarddate="1982-08-14">14 August 1982 </datesingle>
+							<event>Destroyed</event>
+						</chronitem>	
+					</chronlist>
+				</fileplan>
+			</fileplan>
+			<fileplan id="e3cab234-3b2e-4b16-8529-4b25bb0d4250">
+				<head>OPERATIONS</head>
+				<p>Documents related to the general operations of the Ministry
+					<date localtype="PeriodBegin"> standarddate="1978-02-14">14 February 1978</date>
+					<date localtype="PeriodEnd">  standarddate="1980-01-13">13 January 1980</date>
+				</p>
+				<chronlist>
+					<chronitem>
+						<datesingle standarddate="1978-01-02">02 January 1978 </datesingle>
+						<event>Created</event>
+					</chronitem>	
+				</chronlist>
+				<fileplan id="f3cab234-3b2e-4b16-8529-4b25bb0d4250">
+					<head>Equipment Maintenance</head>
+					<p>Documents related to equipment maintenance
+						<date localtype="PeriodBegin"> standarddate="1978-02-14">14 February 1978</date>
+						<date localtype="PeriodEnd">  standarddate="1980-01-13">13 January 1980</date>
+					</p>
+					<chronlist>
+						<chronitem>
+							<datesingle standarddate="1978-01-02">02 January 1978 </datesingle>
+							<event>Created</event>
+						</chronitem>
+					</chronlist>
+					<fileplan id="g3cab234-3b2e-4b16-8529-4b25bb0d4250">
+						<head>Computer Programs/Systems</head>
+						<p>Documents related to computer programs/systems
+							<date localtype="PeriodBegin"> standarddate="1978-02-14">14 February 1978</date>
+							<date localtype="PeriodEnd">  standarddate="1980-01-13">13 January 1980</date>
+							<subject localtype="keywords">
+								<part>Licenses</part>
+								<part>Bug reports</part>
+								<part>History</part>
+							</subject>
+						</p>
+						<chronlist>
+							<chronitem>
+								<datesingle standarddate="1978-01-02">02 January 1978 </datesingle>
+								<event>Created</event>
+							</chronitem>
+						</chronlist>
+					</fileplan>
+				</fileplan>
+			</fileplan>
+		</fileplan>
+		<accessrestrict>
+			<p>Restricted</p>
+		</accessrestrict>
+		<dsc>
+			<c level="series">
+				<did>
+					<unitid label="current">ERA.14-1-18</unitid>
+					<unittitle>Meeting protocols</unittitle>
+				</did>
+				<accessrestrict>
+					<p>Restricted</p>
+				</accessrestrict>
+				<c level="file">
+					<did>
+						<unitid label="current">46484944464647</unitid>
+						<unittitle>Meeting 01.05.2016</unittitle>
+					</did>
+					<accessrestrict>
+						<p>Restricted</p>
+					</accessrestrict>
+					<!-- A record-->
+					<c level="item">
+						<did>
+							<!--Universally unique identifier for an entity that is generated automatically by the system and stays with the entity forever-->
+							<unitid localtype="system_id">ERA.14-1-18-1-1</unitid>
+							<!--Any external identifier that is used by an ERMS system or is required in a country
+Use localtype and label attributes for type or name of the ID that is used in this field-->
+							<unitid localtype="extra_id">ERA.14-1-18-1-2</unitid>
+							<!--The identifying name or title of the entity. Mandatory.-->
+							<unittitle>Protocol No 1/2016</unittitle>
+							<!--System set date and time when the entity was created. Can be represented as unitdatestructured as well.Mandatory.-->
+							<unitdate datechar="created">2004-01-08T00:00:00</unitdate>
+							<!--Date and time of origin of a record or other entity which may vary from the creation date of the entity in the system. Not mandatory.-->
+							<unitdate datechar="originated">2004-01-08T00:00:00</unitdate>
+							<!--System generated date and time indicating when an entity was first used; generally taken as the last time it can be modified or deleted without formally destroying it.-->
+							<unitdate datechar="first_used">2004-01-08T00:00:00</unitdate>
+							<!--System set date and time indicating when the most recent record or child aggregation was added to the parent aggregation.-->
+							<unitdate datechar="last_addition">2004-01-08T00:00:00</unitdate>
+							<!--A description of the entity. Not mandatory.-->
+							<abstract>This is a memo from 01.05.2016.</abstract>
+							<abstract><subject>
+								<part>Subject of the record (free text described by creator or ontology subject related by archivist)</part>
+							</subject></abstract>
+							<!--The unit used to describe the extent of the record (e.g MB, pages, num of files/components)-->
+							<physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied">
+								<quantity>number</quantity>
+								<unittype>unit name</unittype>
+								<!--Structured statements describing the type of the physical medium of the materials-->
+								<physfacet>text</physfacet>
+							</physdescstructured>
+							<langmaterial>
+								<language script="script">Language</language>
+							</langmaterial>
+							<!--Parent aggregation for a child aggregation or record. Not mandatory-->
+							<!--<didnote localtype="aggregation_id">VALUE</didnote> in record should match unitid of parent c level-->
+							<didnote localtype="aggregation_id">46484944464647</didnote>
+							<!--Additional notes.-->
+							<didnote>Notes</didnote>
+							<!--An entity primarily responsible for making the content of the resource; an entity primarily responsible for making the resource (comment: Examples of a Creator include a person, an organization, or a service).-->
+							<origination label="creator">
+								<corpname>
+									<part>Name</part>
+								</corpname>
+							</origination>
+							<daoset label="Digital Objects">
+								<dao id="a4010b49-5a5d-4136-961a-ed4c8e040929" daotype="borndigital" linktitle="Report.docx" href="file:../../representations/rep1/data/Report.docx" />
+								<dao id="e004242c-76e2-4865-aea4-4960190a9d55" daotype="borndigital" otherdaotype="migrated" linktitle="Report.pdf" href="file:../../representations/rep2/data/Report.pdf" />
+								<dao id="d8e835fc-a819-401d-b490-94f13ae317d3" daotype="borndigital" linktitle="Memo.wma" href="file:../../representations/rep1/data/Memo.wma" />
+								<dao id="eb0423ba-76e2-4865-aea4-4960190a9d42" daotype="derived" linktitle="Handwritten_notes.pdf" href="file:../../representations/rep1/data/Handwritten_notes.pdf" />
+							</daoset>
+						</did>
+
+						<!--Related record and type of relation.-->
+						<relatedmaterial>
+							<p>related material</p>
+						</relatedmaterial>
+						<controlaccess>
+							<name relator="owner">
+								<part>Name</part>
+							</name>
+							<name relator="administrator">
+								<part>Name</part>
+							</name>
+							<name relator="reader">
+								<part>Name</part>
+							</name>
+							<name relator="sender">
+								<part>Name</part>
+							</name>
+							<name relator="editor">
+								<part>Name</part>
+							</name>
+							<name relator="recipient">
+								<part>Name</part>
+							</name>
+							<name relator="other">
+								<part>Name</part>
+							</name>
+						</controlaccess>
+						<!--Information on the history of the unit of description that is significant for its authenticity, integrity and interpretation-->
+						<custodhist>
+							<p>History</p>
+						</custodhist>
+						<!--An element that provides information about the nature of and activities reflected in the described materials.-->
+						<scopecontent>
+							<head>Scope and Content</head>
+							<p>This record is a memo from dd.MM.yyyy.</p>
+						</scopecontent>
+						<!-- Reference to the classification schema in the top level component of the package -->
+						<fileplan>
+							<p>
+								<ptr target="d3cab234-3b2e-4b16-8529-4b25bb0d4250"></ptr>
+							</p>
+						</fileplan>	
+						<appraisal id="DisposalScheduleId" localtype="disposal_schedule">
+							<chronlist>
+								<chronitem localtype="disposal_action">
+									<daterange>
+										<!--RetentionStart. System generated date calculated from the record’s disposal schedule indicating the start of its retention period-->
+										<fromdate>01.05.2016</fromdate>
+										<!--DisposalActionDue. The calculated date that the record is due for disposal.-->
+										<todate>02.05.2091</todate>
+									</daterange>
+									<event>
+										<!--Code describing the action to be taken on disposal of the record.-->
+									</event>
+								</chronitem>
+
+								<chronitem localtype="last_reviewed">
+									<!--System set date and time indicating when the last review was completed.-->
+									<datesingle>01.05.2016</datesingle>
+									<event>
+										<!--LastReviewedComment. Comment made by the user who last reviewed the record explaining the disposal decision made by that review.-->
+									</event>
+								</chronitem>
+							</chronlist>
+						</appraisal>	
+						<acqinfo>
+							<chronlist>
+								<chronitem localtype="transferred">
+									<!--System set date and time indicating when the last review was completed.-->
+									<datesingle>01.05.2016</datesingle>
+									<event>
+										<!--Transferred. System set date and time indicating when the transfer of the record was confirmed.-->
+									</event>
+								</chronitem>
+							</chronlist>
+						</acqinfo>
+						<altformavail>											
+							<!--Reference to another entity that has been created by duplicating the record, component or event, and is an exact copy up to the event of duplication, with an identical provenance-->
+							<p>Reference to another entity that has been created by duplicating the record, component or event, and is an exact copy up to the event of duplication, with an identical provenance</p>
+						</altformavail>
+						<processinfo>
+							<chronlist>
+								<chronitem>
+									<datesingle>09.11.2016</datesingle>
+									<event>
+										<!--An element for recording an event of a transformed record.-->
+									</event>
+								</chronitem>
+							</chronlist>
+						</processinfo>
+						<index>
+							<head>keywords</head>
+							<indexentry>
+								<subject>
+									<part>Keywords</part>
+								</subject>
+							</indexentry>
+						</index>
+						<index>
+							<head>location index</head>
+							<indexentry>
+								<geogname>
+									<part>Location</part>
+								</geogname>
+							</indexentry>
+						</index>
+						<!--Information about any finding aids that the repository or records creator may have that provide information relating to the context and contents of the unit of description.-->
+						<otherfindaid>
+							<p>Finding Aid</p>
+						</otherfindaid>
+						<accessrestrict>
+							<chronlist>
+								<chronitem>
+									<daterange>
+										<fromdate>01.05.2016</fromdate>
+										<todate>02.05.2091</todate>
+									</daterange>
+									<event>
+										<list>
+											<!--Type of the restriction (e.g. personal data)-->
+											<item>DEI</item>
+											<!--Duration of the restriction in years (e.g. 25 years)-->
+											<item>75 years</item>
+											<!--Source of the restriction (e.g. Public access law AvTS § 7-->
+											<item>Public access law AvTS § 7</item>
+											<!--additional description of the access restriction (e.g. The content can be made public if personal data is removed from the DIP)-->
+											<item>The content can be made public if personal data is removed from the DIP</item>
+										</list>
+									</event>
+								</chronitem>
+							</chronlist>
+						</accessrestrict>
+						<!--Other descriptive metadata-->
+						<odd>
+							<head>record_history</head>
+							<chronlist>
+								<chronitem localtype="dispatched">
+									<datesingle>Dispatch Date</datesingle> <!--Date of dispatch of the record-->
+									<event>
+									Dispatch Mode
+										<name relator="dispatcher">
+											<part>name</part>
+										</name>
+										<name relator="addressee">
+											<part>name</part>
+										</name>
+									</event>
+								</chronitem>
+								<chronitem localtype="main_signature">
+									<datesingle>MainSignatureDate</datesingle> <!--Date of main signature-->
+									<event>
+										<name relator="main_signer">
+											<part>name</part>
+										</name>
+										<occupation relator="main_signer_role">
+											<part></part>
+										</occupation>
+									</event>
+								</chronitem>
+								<chronitem localtype="other_signature">
+									<datesingle>OtherSignatureDate</datesingle> <!--Date of main signature-->
+									<event>
+										<name relator="other_signer">
+											<part>name</part>
+										</name>
+										<occupation relator="main_signer_role">
+											<part></part>
+										</occupation>
+									</event>
+								</chronitem>
+								<chronitem localtype="action"> 
+									<datesingle>Time of the action</datesingle> <!--Time of the action-->
+									<event>
+										<name relator="actor">
+											<part>name</part>
+										</name>
+										<list>
+											<item>Name of the action</item> <!--Description of the action (e.g. opening, classifying, closing etc.)-->
+										</list>
+									</event>
+								</chronitem>
+							</chronlist>
+						</odd>						
+					</c>
+				</c>
+			</c>
+		</dsc>
+	</archdesc>
+</ead>
