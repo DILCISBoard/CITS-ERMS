@@ -1,2 +1,2 @@
-# SMURF
-SMURF Specification
+# ERMS
+E-ARK ERMS Specification
