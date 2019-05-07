@@ -934,7 +934,7 @@
             </xs:annotation>
             <xs:simpleType>
                 <xs:restriction base="xs:string">
-                    <xs:enumeration value="Confidentially"/>
+                    <xs:enumeration value="Confidential"/>
                     <xs:enumeration value="GDPR"/>
                     <xs:enumeration value="Integrity"/>
                     <xs:enumeration value="Other type"/>
