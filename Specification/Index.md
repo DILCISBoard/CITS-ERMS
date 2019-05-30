@@ -4,5 +4,5 @@ title: CS E-ARK-ERMS Specification Files
 CSERMS Specification Files
 =======================
 
-- [Draft CS ERMS Specification in pdf](./Draft_CS_ERMS.pdf)
-  First draft version of CS ERMS, not completed
+- [CS ERMS Specification in pdf](./E-ARK_ERMS.pdf)
+  First version of CS ERMS
