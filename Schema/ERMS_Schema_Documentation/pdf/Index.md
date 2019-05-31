@@ -1,7 +1,7 @@
 ---
-title: CSERMS Draft Schema documentation (pdf)
+title: CSERMS Schema documentation (pdf)
 ---
-CSERMS Draft Schema documentation (pdf)
+CSERMS Schema documentation (pdf)
 =======================
 
 - [Schema documentation (pdf)](./ERMS.pdf)
