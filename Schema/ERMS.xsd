@@ -1024,7 +1024,7 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="Agent" type="AgentComplexType" minOccurs="0"/>
+                        <xs:element name="Agent" type="AgentComplexType" minOccurs="0" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
