@@ -229,19 +229,16 @@
             <xs:element name="Loan" type="LoanType" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="Disposal" minOccurs="0"/>
             <xs:element ref="Direction" minOccurs="0"/>
-            <xs:choice minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation xml:lang="en">Either one agent or a number of agents grouped in the agents element can be present</xs:documentation>
-                </xs:annotation>
-                <xs:element ref="Agent" minOccurs="0"/>
-                <xs:element name="Agents" minOccurs="0">
+            <xs:element name="Agents" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">Either one agent or a number of agents grouped in the agents element can be present</xs:documentation>
+                    </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element ref="Agent" minOccurs="0" maxOccurs="unbounded"/>
                         </xs:sequence>
                     </xs:complexType>
-                </xs:element>
-            </xs:choice>
+            </xs:element>
             <xs:element ref="Description" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Mandatory if title is missing</xs:documentation>
@@ -252,7 +249,7 @@
                     <xs:documentation xml:lang="en">Grouping of dates belonging to the record</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element ref="Action" minOccurs="0"/>
+            <xs:element ref="Action" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="DispatchMode" minOccurs="0"/>
             <xs:element ref="Access" minOccurs="0"/>
             <xs:element name="PhysicalLocations" minOccurs="0">
@@ -261,7 +258,7 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element ref="PhysicalLocation" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="PhysicalLocation" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -1509,7 +1506,7 @@
 
     <xs:element name="Status">
         <xs:annotation>
-            <xs:documentation xml:lang="en">Current status of the aggregation</xs:documentation>
+            <xs:documentation xml:lang="en">Current status of the aggregation or record</xs:documentation>
         </xs:annotation>
         <xs:simpleType>
             <xs:restriction base="xs:string">
