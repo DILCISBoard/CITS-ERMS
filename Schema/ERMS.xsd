@@ -89,16 +89,6 @@
                     <xs:documentation xml:lang="en">Information regarding loans</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="Decisions" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation xml:lang="en">All decisions regarding an aggregation.</xs:documentation>
-                </xs:annotation>
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element ref="Decision" maxOccurs="unbounded"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
             <xs:element ref="Disposal" minOccurs="0"/>
             <xs:element name="Agents" minOccurs="0">
                 <xs:annotation>
@@ -1315,7 +1305,7 @@
 
     <xs:complexType name="ActionType">
         <xs:annotation>
-            <xs:documentation xml:lang="en">Definition of all elements involved in a action. The action can for example be an decision</xs:documentation>
+            <xs:documentation xml:lang="en">Definition of all elements involved in a action. The action can for example be an decision.</xs:documentation>
         </xs:annotation>
         <xs:sequence>
             <xs:element name="ActionText" type="xs:string">
@@ -1335,7 +1325,7 @@
             </xs:element>
             <xs:element name="ActionType" minOccurs="0" type="xs:string">
                 <xs:annotation>
-                    <xs:documentation xml:lang="en">All actions are following a action type and its regulation</xs:documentation>
+                    <xs:documentation xml:lang="en">All actions are following a action type and its regulation. It can for example be a decsion.</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="Dates" minOccurs="0">
@@ -1451,28 +1441,6 @@
         </xs:complexType>
     </xs:element>
     
-    <xs:element name="Decision">
-        <xs:annotation>
-            <xs:documentation xml:lang="en">A decision.</xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-            <xs:simpleContent>
-                <xs:extension base="xs:string">
-                    <xs:attribute name="DecisionDate" type="xs:dateTime" use="optional">
-                        <xs:annotation>
-                            <xs:documentation xml:lang="en">The date for the decision.</xs:documentation>
-                        </xs:annotation>
-                    </xs:attribute>
-                    <xs:attribute name="DecisionDeadline" type="xs:dateTime" use="optional">
-                        <xs:annotation>
-                            <xs:documentation xml:lang="en">The date for deadline for decision.</xs:documentation>
-                        </xs:annotation>
-                    </xs:attribute>
-                </xs:extension>
-            </xs:simpleContent>
-        </xs:complexType>
-    </xs:element>
-
     <xs:element name="Keywords">
         <xs:annotation>
             <xs:documentation xml:lang="en">List of Keywords to identify the aggregation or record</xs:documentation>
