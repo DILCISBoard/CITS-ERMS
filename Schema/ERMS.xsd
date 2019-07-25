@@ -71,6 +71,7 @@
             <xs:element ref="HierarchicalParentClassID" minOccurs="0"/>
             <xs:element ref="MaxLevelsOfAggregation" minOccurs="0"/>
             <xs:element ref="LevelName" minOccurs="0"/>
+            <xs:element ref="ArchivalHistory" minOccurs="0"/>
             <xs:element ref="Keywords" minOccurs="0"/>
             <xs:element ref="Title" minOccurs="0"/>
             <xs:element ref="OtherTitle" minOccurs="0" maxOccurs="unbounded"/>
@@ -87,6 +88,16 @@
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Information regarding loans</xs:documentation>
                 </xs:annotation>
+            </xs:element>
+            <xs:element name="Decisions" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">All decisions regarding an aggregation.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="Decision" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
             </xs:element>
             <xs:element ref="Disposal" minOccurs="0"/>
             <xs:element name="Agents" minOccurs="0">
@@ -109,7 +120,7 @@
                     <xs:documentation xml:lang="en">A grouping of dates belonging to the aggregation</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element ref="Action" minOccurs="0"/>
+            <xs:element ref="Action" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="DispatchMode" minOccurs="0"/>
             <xs:element ref="Access" minOccurs="0"/>
             <xs:element name="PhysicalLocations" minOccurs="0">
@@ -146,6 +157,11 @@
                         </xs:element>
                     </xs:sequence>
                 </xs:complexType>
+            </xs:element>
+            <xs:element ref="AdditionalInformation" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">Additional information on record level</xs:documentation>
+                </xs:annotation>
             </xs:element>
             <xs:choice minOccurs="0" maxOccurs="1">
                 <xs:element name="Aggregation" type="AggregationType" minOccurs="0"
@@ -217,6 +233,7 @@
             <xs:element ref="Classification" minOccurs="0"/>
             <xs:element ref="ParentAggregationID" minOccurs="0"/>
             <xs:element ref="LevelName" minOccurs="0"/>
+            <xs:element ref="ArchivalHistory" minOccurs="0"/>
             <xs:element ref="Keywords" minOccurs="0"/>
             <xs:element ref="Title" minOccurs="0"/>
             <xs:element ref="OtherTitle" minOccurs="0" maxOccurs="unbounded"/>
@@ -1227,6 +1244,9 @@
                         <xs:enumeration value="Has rendition version"/>
                         <xs:enumeration value="Is child of"/>
                         <xs:enumeration value="Is parent of"/>
+                        <xs:enumeration value="Moved"/>
+                        <xs:enumeration value="Moved from"/>
+                        <xs:enumeration value="Deleted"/>
                         <xs:enumeration value="Own relation definition"/>
                     </xs:restriction>
                 </xs:simpleType>
@@ -1270,6 +1290,21 @@
         <xs:annotation>
             <xs:documentation xml:lang="en">Short description of record or aggregation</xs:documentation>
         </xs:annotation>
+    </xs:element>
+    
+    <xs:element name="ArchivalHistory">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Information on the history of the unit of description that is significant for its authenticity, integrity and interpretation</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element name="HistoryLine" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">Each line of text regarding the history is plaved in a HistoryLine elemen</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
     </xs:element>
 
     <xs:element name="Action" type="ActionType">
@@ -1409,6 +1444,28 @@
                         use="optional">
                         <xs:annotation>
                             <xs:documentation xml:lang="en">The hierarchical identifier of the entity, unique within the ERMS</xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="Decision">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">A decision.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="DecisionDate" type="xs:dateTime" use="optional">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">The date for the decision.</xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="DecisionDeadline" type="xs:dateTime" use="optional">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">The date for deadline for decision.</xs:documentation>
                         </xs:annotation>
                     </xs:attribute>
                 </xs:extension>
