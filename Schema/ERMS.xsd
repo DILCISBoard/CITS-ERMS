@@ -110,6 +110,7 @@
                 </xs:annotation>
             </xs:element>
             <xs:element ref="action" minOccurs="0"/>
+            <xs:element ref="archivalhistory" minOccurs="0"/>
             <xs:element ref="dispatchmode" minOccurs="0"/>
             <xs:element ref="access" minOccurs="0"/>
             <xs:element name="physicallocations" minOccurs="0">
@@ -253,6 +254,7 @@
                 </xs:annotation>
             </xs:element>
             <xs:element ref="action" minOccurs="0"/>
+            <xs:element ref="archivalhistory" minOccurs="0"/>
             <xs:element ref="dispatchmode" minOccurs="0"/>
             <xs:element ref="access" minOccurs="0"/>
             <xs:element name="physicallocations" minOccurs="0">
@@ -1640,5 +1642,20 @@
         </xs:annotation>
         <xs:attribute name="type" type="xs:string" use="required"/>
     </xs:complexType>
+    
+    <xs:element name="archivalhistory">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Information on the history of the unit of description that is significant for its authenticity, integrity and interpretation.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="historyline" minOccurs="1" maxOccurs="unbounded" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">Each paragraph of text giving the archival history.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
 </xs:schema>
