@@ -309,13 +309,14 @@
         <xs:attribute name="RecordPhysicalOrDigital" use="optional">
             <xs:annotation>
                 <xs:documentation xml:lang="en">State whether the record is physical, digital, both or if the statment dont apply.</xs:documentation>
+                <xs:documentation xml:lang="en">2020-02-11 update of value list. "Dont apply" -> "Does not apply" </xs:documentation>
             </xs:annotation>
             <xs:simpleType>
                 <xs:restriction base="xs:string">
                     <xs:enumeration value="Physical"/>
                     <xs:enumeration value="Digitial"/>
                     <xs:enumeration value="Physcical and Digital"/>
-                    <xs:enumeration value="Dont apply"/>
+                    <xs:enumeration value="Does not apply"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
@@ -545,13 +546,14 @@
         <xs:attribute name="AgentType" use="required">
             <xs:annotation>
                 <xs:documentation xml:lang="en">Required typing of the agent. When set to the value other a customised (own) extending value can be given with the attribute OtherAgentType</xs:documentation>
+                <xs:documentation xml:lang="en">2020-02-11 update in value list. "Authorizing person" -> "Authorising person"</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
                 <xs:restriction base="xs:string">
                     <xs:enumeration value="Administrator"/>
                     <xs:enumeration value="Agent"/>
                     <xs:enumeration value="Archiver"/>
-                    <xs:enumeration value="Authorizing person"/>
+                    <xs:enumeration value="Authorising person"/>
                     <xs:enumeration value="Borrower"/>
                     <xs:enumeration value="Counterpart"/>
                     <xs:enumeration value="Creator"/>
@@ -593,6 +595,7 @@
     <xs:complexType name="AppendixType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of the brief information regarding an appendix</xs:documentation>
+            <xs:documentation xml:lang="en">2020-02-11 EsignatureHaveExisted -> EsignatureHasExisted</xs:documentation>
         </xs:annotation>
         <xs:sequence>
             <xs:element name="ESignature" type="ESignatureComplexType" minOccurs="0"/>
@@ -627,7 +630,7 @@
                 <xs:documentation xml:lang="en">Name and path to the file in the form: file:///path/to/file</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="EsignatureHaveExisted" type="xs:boolean" use="optional">
+        <xs:attribute name="EsignatureHasExisted" type="xs:boolean" use="optional">
             <xs:annotation>
                 <xs:documentation xml:lang="en">Marker for the appendix having had an electronic signature</xs:documentation>
             </xs:annotation>
