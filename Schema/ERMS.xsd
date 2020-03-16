@@ -330,7 +330,7 @@
         </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:dateTime">
-                <xs:attribute name="datetype">
+                <xs:attribute name="datetype" use="required">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
                             <xs:enumeration value="Aggregated"/>
@@ -383,7 +383,7 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:attribute>
-                <xs:attribute name="otherdatetype" type="xs:string">
+                <xs:attribute name="otherdatetype" type="xs:string" use="optional">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">When DateType is set to "Other" this attribute is used to state the type of date</xs:documentation>
                     </xs:annotation>
@@ -398,7 +398,7 @@
         </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute name="adresstype">
+                <xs:attribute name="adresstype" use="required">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
                             <xs:enumeration value="Postal Address"/>
@@ -416,7 +416,7 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:attribute>
-                <xs:attribute name="otheraddresslinetype" type="xs:string">
+                <xs:attribute name="otheraddresslinetype" type="xs:string" use="optional">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">When AddressType is set to Other this attribute is used to state the type of address line</xs:documentation>
                     </xs:annotation>
@@ -431,7 +431,7 @@
         </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute name="contacttype">
+                <xs:attribute name="contacttype" use="required">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
                             <xs:enumeration value="Phonenumber"/>
@@ -443,7 +443,7 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:attribute>
-                <xs:attribute name="othercontactlinetype" type="xs:string">
+                <xs:attribute name="othercontactlinetype" type="xs:string" use="optional">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">When ContactType is set to Other this attribute is used to state the type of contact line</xs:documentation>
                     </xs:annotation>
@@ -718,12 +718,12 @@
                     <xs:documentation xml:lang="en">Name of custom defined (own) defined element</xs:documentation>
                 </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="datatype" type="xs:string">
+            <xs:attribute name="datatype" type="xs:string" use="optional">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Datatype for custom defined (own) defined element</xs:documentation>
                 </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="format" type="xs:string">
+            <xs:attribute name="format" type="xs:string" use="optional">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Format for custom defined (own) defined element</xs:documentation>
                 </xs:annotation>
@@ -823,7 +823,7 @@
         </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:dateTime">
-                <xs:attribute name="datetype">
+                <xs:attribute name="datetype" use="required" >
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
                             <xs:enumeration value="Action due"/>
@@ -838,7 +838,7 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:attribute>
-                <xs:attribute name="otherdisposaldatetype" type="xs:string">
+                <xs:attribute name="otherdisposaldatetype" type="xs:string" use="optional">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">When OtherDisposalDateType is set to "Other date" this attribute is used to state the type of date</xs:documentation>
                     </xs:annotation>
@@ -1088,7 +1088,9 @@
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Maintenance status</xs:documentation>
                 </xs:annotation>
-                <xs:simpleType>
+                <xs:complexType>
+                    <xs:attribute name="value" use="required">
+                        <xs:simpleType>
                     <xs:restriction base="xs:string">
                         <xs:enumeration value="revised"/>
                         <xs:enumeration value="deleted"/>
@@ -1097,6 +1099,8 @@
                         <xs:enumeration value="derived"/>
                     </xs:restriction>
                 </xs:simpleType>
+                    </xs:attribute>
+                </xs:complexType>
             </xs:element>
             <xs:element name="maintenanceagency">
                 <xs:annotation>
@@ -1132,7 +1136,9 @@
                                         <xs:annotation>
                                             <xs:documentation xml:lang="en">Type of event</xs:documentation>
                                         </xs:annotation>
-                                        <xs:simpleType>
+                                        <xs:complexType>
+                                            <xs:attribute name="value" use="required">
+                                                <xs:simpleType>
                                             <xs:restriction base="xs:token">
                                                 <xs:enumeration value="Created"/>
                                                 <xs:enumeration value="Revised"/>
@@ -1143,6 +1149,9 @@
                                                 <xs:enumeration value="Unknown"/>
                                             </xs:restriction>
                                         </xs:simpleType>
+                                            </xs:attribute>
+                                        </xs:complexType>
+                                        
                                     </xs:element>
                                     <xs:element name="eventdatetime" type="xs:dateTime">
                                         <xs:annotation>
@@ -1516,7 +1525,9 @@
         <xs:annotation>
             <xs:documentation xml:lang="en">Current status of the aggregation</xs:documentation>
         </xs:annotation>
-        <xs:simpleType>
+        <xs:complexType>
+            <xs:attribute name="value" use="optional">
+                <xs:simpleType>
             <xs:restriction base="xs:string">
                 <xs:enumeration value="Ad Acta"/>
                 <xs:enumeration value="Closed"/>
@@ -1530,6 +1541,8 @@
                 <xs:enumeration value="Received"/>
             </xs:restriction>
         </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>        
     </xs:element>
 
     <xs:element name="direction" type="directiontype">
@@ -1554,7 +1567,7 @@
                 </xs:restriction>
             </xs:simpleType>            
         </xs:attribute>
-        <xs:attribute name="otherdirectiondefinition" type="xs:string">
+        <xs:attribute name="otherdirectiondefinition" type="xs:string" use="optional">
             <xs:annotation>
                 <xs:documentation xml:lang="en">When the attribute DirectionDefiniton is set to "Other" this attribute is used to state the type of direction</xs:documentation>
             </xs:annotation>
