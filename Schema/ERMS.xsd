@@ -1092,11 +1092,14 @@
                     <xs:attribute name="value" use="required">
                         <xs:simpleType>
                     <xs:restriction base="xs:string">
-                        <xs:enumeration value="revised"/>
-                        <xs:enumeration value="deleted"/>
-                        <xs:enumeration value="new"/>
                         <xs:enumeration value="cancelled"/>
+                        <xs:enumeration value="created"/>
+                        <xs:enumeration value="deleted"/>
                         <xs:enumeration value="derived"/>
+                        <xs:enumeration value="new"/>
+                        <xs:enumeration value="revised"/>
+                        <xs:enumeration value="unknown"/>                        
+                        <xs:enumeration value="updated"/>
                     </xs:restriction>
                 </xs:simpleType>
                     </xs:attribute>
