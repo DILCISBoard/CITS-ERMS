@@ -9,32 +9,32 @@
     <!-- CO-OCCURRENCE CONSTRAINTS -->
 
     <pattern id="co-occurrence-constraints">
-        <rule context="*[@aggregationtype = 'Own aggregation definition']">
-            <assert test="normalize-space(@otheraggregationtype)"> If the value of a <emph>aggregationtype</emph> attribute is "Own aggregation definition', then the <emph>otheraggregationtype</emph> attribute must be used.</assert>
+        <rule context="*[@aggregationType = 'own_aggregation_definition']">
+            <assert test="normalize-space(@otherAggregationType)"> If the value of a <emph>aggregationType</emph> attribute is "own_aggregation_definition', then the <emph>otherAggregationType</emph> attribute must be used.</assert>
         </rule>
         <rule context="*[@dateType = 'Other']">
-            <assert test="normalize-space(@otherdatetype)"> If the value of a <emph>datetype</emph> attribute is "Other', then the <emph>otherdatetype</emph> attribute must be used. </assert>
+            <assert test="normalize-space(@otherDateType)"> If the value of a <emph>dateType</emph> attribute is "other', then the <emph>otherDateType</emph> attribute must be used. </assert>
         </rule>
-        <rule context="*[@directiondefinition = 'Other']">
-            <assert test="normalize-space(@otherdirectiondefinition)"> If the value of a <emph>directiondefinition</emph> attribute is "Other', then the <emph>otherdirectiondefinition</emph> attribute must be used. </assert>
+        <rule context="*[@directionDefinition = 'other']">
+            <assert test="normalize-space(@otherDirectionDefinition)"> If the value of a <emph>directionDefinition</emph> attribute is "other', then the <emph>otherDirectionDefinition</emph> attribute must be used. </assert>
         </rule>
-        <rule context="*[@addresslinetype = 'Other']">
-            <assert test="normalize-space(@otheraddresslinetype)"> If the value of a <emph>addresslinetype</emph> attribute is "Other', then the <emph>otheraddresslinetype</emph> attribute must be used.</assert>
+        <rule context="*[@addressLineType = 'other']">
+            <assert test="normalize-space(@otherAddressLineType)"> If the value of a <emph>addressLineType</emph> attribute is "other', then the <emph>otherAddressLineType</emph> attribute must be used.</assert>
         </rule>
-        <rule context="*[@contactlinetype = 'Other']">
-            <assert test="normalize-space(@othercontactlinetype)"> If the value of a <emph>contactlinetype</emph> attribute is "Other', then the <emph>othercontactlinetype</emph> attribute must be used. </assert>
+        <rule context="*[@contactLineType = 'other']">
+            <assert test="normalize-space(@otherContactLineType)"> If the value of a <emph>contactLineType</emph> attribute is "other', then the <emph>otherContactLineType</emph> attribute must be used. </assert>
         </rule>
-        <rule context="*[@agenttype = 'Other']">
-            <assert test="normalize-space(@otheragenttype)"> If the value of an <emph>agenttype</emph> attribute is "Other', then the <emph>otheragenttype</emph> attribute must be used. </assert>
+        <rule context="*[@agentType = 'other']">
+            <assert test="normalize-space(@otherAgentType)"> If the value of an <emph>agentType</emph> attribute is "other', then the <emph>otherAgentType</emph> attribute must be used. </assert>
         </rule>
-        <rule context="*[@disposaldatetype = 'Other date']">
-            <assert test="normalize-space(@otherdisposaldatetype)"> If the value of attribute <emph>disposaldatetype</emph> is 'Other date', then the <emph>otherdisposaldatetype</emph> attribute should be used </assert>
+        <rule context="*[@disposalDateType = 'other_date']">
+            <assert test="normalize-space(@otherDisposalDateType)"> If the value of attribute <emph>disposalDateType</emph> is 'other_date', then the <emph>otherDisposalDateType</emph> attribute should be used </assert>
         </rule>
-        <rule context="*[@restrictiontype = 'Other type']">
-            <assert test="normalize-space(@otherrestrictiontype)"> If the value of attribute <emph>restrictiontype</emph> is 'Other type', then the <emph>otherrestrictiontype</emph> attribute should be used </assert>
+        <rule context="*[@restrictionType = 'other_type']">
+            <assert test="normalize-space(@otherRestrictionType)"> If the value of attribute <emph>restrictionType</emph> is 'other_type', then the <emph>otherRestrictionType</emph> attribute should be used </assert>
         </rule>
-        <rule context="*[@relationtype = 'Own relation definition']">
-            <assert test="normalize-space(@oherrelationtype)"> If the value of attribute <emph>relationtype</emph> is 'Own relation definition', then the <emph>otherrelationtype</emph> attribute should be used </assert>
+        <rule context="*[@relationType = 'own_relation_definition']">
+            <assert test="normalize-space(@oherRelationType)"> If the value of attribute <emph>relationType</emph> is 'own_relation_definition', then the <emph>otherRelationType</emph> attribute should be used </assert>
         </rule>
     </pattern>
 

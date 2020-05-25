@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- E-ARK ERMS schema version 1.0 -->
+<!-- E-ARK ERMS schema version 2.0 2020-08-01 -->
+<!-- Chganges includes correcdtion of elemetnsname and camelcasing, valuelist corrections and lowercase and underscore used instead of spaces.-->
+<!-- E-ARK ERMS schema version 1.0 2019-05-31 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="https://DILCIS.eu/XML/ERMS" targetNamespace="https://DILCIS.eu/XML/ERMS"
     elementFormDefault="qualified">
-    <xs:element name="erms" type="ermstype">
+    <xs:element name="erms" type="ermsType">
         <xs:annotation>
             <xs:documentation xml:lang="en">The main element for Transfer of information from an ERMS</xs:documentation>
         </xs:annotation>
     </xs:element>
 
-    <xs:complexType name="ermstype">
+    <xs:complexType name="ermsType">
         <xs:annotation>
             <xs:documentation xml:lang="en">The definition of the ERMS element</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="control" type="controltype">
+            <xs:element name="control" type="controlType">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Information regarding the XML-document itself and the system from which the information is originating on top level</xs:documentation>
                 </xs:annotation>
@@ -33,7 +35,7 @@
                     </xs:annotation>
                 </xs:element>
             </xs:choice>
-            <xs:element ref="additionalinformation" minOccurs="0">
+            <xs:element ref="additionalInformation" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Additional information at this level is most likely system documentation</xs:documentation>
                 </xs:annotation>
@@ -41,49 +43,49 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:element name="aggregations" type="aggregationstype">
+    <xs:element name="aggregations" type="aggregationsType">
         <xs:annotation>
             <xs:documentation xml:lang="en">A grouping of separate aggregations</xs:documentation>
         </xs:annotation>
     </xs:element>
 
-    <xs:complexType name="aggregationstype">
+    <xs:complexType name="aggregationsType">
         <xs:annotation>
             <xs:documentation xml:lang="en">The definition of a grouping of separate aggregations</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="aggregation" maxOccurs="unbounded" type="aggregationtype"/>
+            <xs:element name="aggregation" maxOccurs="unbounded" type="aggregationType"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="aggregationtype">
+    <xs:complexType name="aggregationType">
         <xs:annotation>
             <xs:documentation xml:lang="en">The definition of one aggregation and its elements and attributes</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element ref="objectid"/>
-            <xs:element ref="extraid" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element ref="informationclass" minOccurs="0"/>
-            <xs:element ref="securityclass" minOccurs="0"/>
+            <xs:element ref="objectId"/>
+            <xs:element ref="extraId" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="informationClass" minOccurs="0"/>
+            <xs:element ref="securityClass" minOccurs="0"/>
             <xs:element ref="identification" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="classification" minOccurs="0"/>
-            <xs:element ref="parentaggregationid" minOccurs="0"/>
-            <xs:element ref="hierarchicalparentclassid" minOccurs="0"/>
-            <xs:element ref="maxlevelsofaggregation" minOccurs="0"/>
-            <xs:element ref="levelname" minOccurs="0"/>
+            <xs:element ref="parentAggregationId" minOccurs="0"/>
+            <xs:element ref="hierarchicalParentClassId" minOccurs="0"/>
+            <xs:element ref="maxLevelsOfAggregation" minOccurs="0"/>
+            <xs:element ref="levelName" minOccurs="0"/>
             <xs:element ref="keywords" minOccurs="0"/>
             <xs:element ref="title" minOccurs="0"/>
-            <xs:element ref="othertitle" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="otherTitle" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="subject" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="status" minOccurs="0"/>
             <xs:element ref="relation" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="restriction" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="ippinformation" type="ipptype" minOccurs="0">
+            <xs:element name="IPPInformation" type="ippType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Information regarding intellectual property protection</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="loan" type="loantype" minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="loan" type="loanType" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Information regarding loans</xs:documentation>
                 </xs:annotation>
@@ -104,22 +106,22 @@
                     <xs:documentation xml:lang="en">Mandatory if title is missing</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="dates" type="datestype" minOccurs="0" maxOccurs="1">
+            <xs:element name="dates" type="datesType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">A grouping of dates belonging to the aggregation</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element ref="action" minOccurs="0"/>
-            <xs:element ref="archivalhistory" minOccurs="0"/>
-            <xs:element ref="dispatchmode" minOccurs="0"/>
+            <xs:element ref="archivalHistory" minOccurs="0"/>
+            <xs:element ref="dispatchMode" minOccurs="0"/>
             <xs:element ref="access" minOccurs="0"/>
-            <xs:element name="physicallocations" minOccurs="0">
+            <xs:element name="physicalLocations" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Either on physical location or a number of locations grouped in the element PhysicalLocations can be present</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element ref="physicallocation" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="physicalLocation" minOccurs="0" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -133,13 +135,13 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="esignatures" minOccurs="0" maxOccurs="1">
+            <xs:element name="eSignatures" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Either one e-signature or a number of e-signatures grouped in the element ESignatures can be present</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="esignature" type="esignaturecomplextype" minOccurs="0"
+                        <xs:element name="eSignature" type="eSignatureComplexType" minOccurs="0"
                             maxOccurs="unbounded">
                             <xs:annotation>
                                 <xs:documentation xml:lang="en">Inclusion of more than one e-signature using its own XML-schema</xs:documentation>
@@ -149,85 +151,85 @@
                 </xs:complexType>
             </xs:element>
             <xs:choice minOccurs="0" maxOccurs="1">
-                <xs:element name="aggregation" type="aggregationtype" minOccurs="0"
+                <xs:element name="aggregation" type="aggregationType" minOccurs="0"
                     maxOccurs="unbounded">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">One aggregation</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="record" type="recordtype" minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="record" type="recordType" minOccurs="0" maxOccurs="unbounded">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">One record</xs:documentation>
                     </xs:annotation>
                 </xs:element>
             </xs:choice>
         </xs:sequence>
-        <xs:attribute name="systemidentifier" type="xs:string" use="required">
+        <xs:attribute name="systemIdentifier" type="xs:string" use="required">
             <xs:annotation>
                 <xs:documentation xml:lang="en">An identifier for the aggregation with the type UUID created at the latest at the export of the information</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="aggregationtype" use="required">
+        <xs:attribute name="aggregationType" use="required">
             <xs:annotation>
-                <xs:documentation xml:lang="en">Describes the aggregation type. Value "Own aggregation definition" demands use of otherAggregationType attribute</xs:documentation>
+                <xs:documentation xml:lang="en">Describes the aggregation type. Value "own_aggregation_definition" demands use of otherAggregationType attribute</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
                 <xs:restriction base="xs:string">
-                    <xs:enumeration value="Casefile"/>
-                    <xs:enumeration value="Class"/>
-                    <xs:enumeration value="Component"/>
-                    <xs:enumeration value="File"/>
-                    <xs:enumeration value="Subfile"/>
-                    <xs:enumeration value="Volume"/>
-                    <xs:enumeration value="Own aggregation definition"/>
+                    <xs:enumeration value="caseFile"/>
+                    <xs:enumeration value="class"/>
+                    <xs:enumeration value="component"/>
+                    <xs:enumeration value="file"/>
+                    <xs:enumeration value="subfile"/>
+                    <xs:enumeration value="volume"/>
+                    <xs:enumeration value="own_aggregation_definition"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
-        <xs:attribute name="otheraggregationtype" type="xs:string" use="optional">
+        <xs:attribute name="otherAggregationType" type="xs:string" use="optional">
             <xs:annotation>
-                <xs:documentation xml:lang="en">When value "Own aggregation definition" is used the attribute OtherAggregationType is used to describe the aggegation type</xs:documentation>
+                <xs:documentation xml:lang="en">When value "own_aggregation_definition" is used the attribute otherAggregationType is used to describe the aggegation type</xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
 
-    <xs:element name="records" type="recordstype">
+    <xs:element name="records" type="recordsType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Grouping of records</xs:documentation>
         </xs:annotation>
     </xs:element>
 
-    <xs:complexType name="recordstype">
+    <xs:complexType name="recordsType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of a grouping of records</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="record" maxOccurs="unbounded" type="recordtype"/>
+            <xs:element name="record" maxOccurs="unbounded" type="recordType"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="recordtype">
+    <xs:complexType name="recordType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of one record and its elements and attributes</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element ref="objectid"/>
-            <xs:element ref="extraid" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element ref="informationclass" minOccurs="0"/>
-            <xs:element ref="securityclass" minOccurs="0"/>
+            <xs:element ref="objectId"/>
+            <xs:element ref="extraId" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="informationClass" minOccurs="0"/>
+            <xs:element ref="securityClass" minOccurs="0"/>
             <xs:element ref="identification" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="classification" minOccurs="0"/>
-            <xs:element ref="parentaggregationid" minOccurs="0"/>
-            <xs:element ref="levelname" minOccurs="0"/>
+            <xs:element ref="parentAggregationId" minOccurs="0"/>
+            <xs:element ref="levelName" minOccurs="0"/>
             <xs:element ref="keywords" minOccurs="0"/>
             <xs:element ref="title" minOccurs="0"/>
-            <xs:element ref="othertitle" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="otherTitle" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="subject" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="status" minOccurs="0"/>
-            <xs:element ref="runningnumber" minOccurs="0"/>
+            <xs:element ref="runningNumber" minOccurs="0"/>
             <xs:element ref="relation" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="restriction" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="ippinformation" type="ipptype" minOccurs="0"/>
-            <xs:element name="loan" type="loantype" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="IPPInformation" type="ippType" minOccurs="0"/>
+            <xs:element name="loan" type="loanType" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="disposal" minOccurs="0"/>
             <xs:element ref="direction" minOccurs="0"/>
             <xs:choice minOccurs="0" maxOccurs="1">
@@ -248,22 +250,22 @@
                     <xs:documentation xml:lang="en">Mandatory if title is missing</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="dates" type="datestype" minOccurs="0" maxOccurs="1">
+            <xs:element name="dates" type="datesType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Grouping of dates belonging to the record</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element ref="action" minOccurs="0"/>
-            <xs:element ref="archivalhistory" minOccurs="0"/>
-            <xs:element ref="dispatchmode" minOccurs="0"/>
+            <xs:element ref="archivalHistory" minOccurs="0"/>
+            <xs:element ref="dispatchMode" minOccurs="0"/>
             <xs:element ref="access" minOccurs="0"/>
-            <xs:element name="physicallocations" minOccurs="0">
+            <xs:element name="physicalLocations" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Either one physical location or a number of locations grouped in the physicallocations element can be present</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element ref="physicallocation" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="physicalLocation" minOccurs="0" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -277,13 +279,13 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="esignatures" minOccurs="0" maxOccurs="1">
+            <xs:element name="eSignatures" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Either one e-signature or a number of e-signatures grouped in the ESignatures element can be present</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="esignature" type="esignaturecomplextype" minOccurs="0"
+                        <xs:element name="eSignature" type="eSignatureComplexType" minOccurs="0"
                             maxOccurs="unbounded">
                             <xs:annotation>
                                 <xs:documentation xml:lang="en">Inclusion of more than one e-signature using its own XML-schema</xs:documentation>
@@ -292,192 +294,192 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element ref="additionalinformation" minOccurs="0">
+            <xs:element ref="additionalInformation" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Additional information on record level</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
-        <xs:attribute name="systemidentifier" type="xs:string" use="required">
+        <xs:attribute name="systemIdentifier" type="xs:string" use="required">
             <xs:annotation>
                 <xs:documentation xml:lang="en">An identifier for the record with the type UUID created at the latest at the export of the information</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="recordtype" type="xs:string" use="optional">
+        <xs:attribute name="recordType" type="xs:string" use="optional">
             <xs:annotation>
                 <xs:documentation xml:lang="en">Type of the record</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="recordphysicalordigital" use="optional">
+        <xs:attribute name="recordPhysicalOrDigital" use="optional">
             <xs:annotation>
                 <xs:documentation xml:lang="en">State whether the record is physical, digital, both or if the statment dont apply.</xs:documentation>
                 <xs:documentation xml:lang="en">2020-02-11 update of value list. "Dont apply" -> "Does not apply" </xs:documentation>
             </xs:annotation>
             <xs:simpleType>
                 <xs:restriction base="xs:string">
-                    <xs:enumeration value="Physical"/>
-                    <xs:enumeration value="Digitial"/>
-                    <xs:enumeration value="Physcical and Digital"/>
-                    <xs:enumeration value="Does not apply"/>
+                    <xs:enumeration value="physical"/>
+                    <xs:enumeration value="digitial"/>
+                    <xs:enumeration value="physcical_and_digital"/>
+                    <xs:enumeration value="does_not_apply"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
     </xs:complexType>
 
-    <xs:complexType name="datetypecomplex">
+    <xs:complexType name="dateTypeComplex">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of all different kinds of dates</xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:dateTime">
-                <xs:attribute name="datetype" use="required">
+                <xs:attribute name="dateType" use="required">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
-                            <xs:enumeration value="Aggregated"/>
-                            <xs:enumeration value="Appraisal"/>
-                            <xs:enumeration value="Archived"/>
-                            <xs:enumeration value="Archiving"/>
-                            <xs:enumeration value="Captured"/>
-                            <xs:enumeration value="Checked in"/>
-                            <xs:enumeration value="Checked out"/>
-                            <xs:enumeration value="Classification"/>
-                            <xs:enumeration value="Closed"/>
-                            <xs:enumeration value="Confidentiality Assessed"/>
-                            <xs:enumeration value="Created"/>
-                            <xs:enumeration value="Decision"/>
-                            <xs:enumeration value="Decision date"/>
-                            <xs:enumeration value="Decision deadline"/>
-                            <xs:enumeration value="Decrypted"/>
-                            <xs:enumeration value="Deleted"/>
-                            <xs:enumeration value="Destroyed"/>
-                            <xs:enumeration value="Dispatch"/>
-                            <xs:enumeration value="Encrypted"/>
-                            <xs:enumeration value="End"/>
-                            <xs:enumeration value="Expedited"/>
-                            <xs:enumeration value="Expiration"/>
-                            <xs:enumeration value="Finished"/>
-                            <xs:enumeration value="First used"/>
-                            <xs:enumeration value="Last addition"/>
-                            <xs:enumeration value="Last addition timestamp"/>
-                            <xs:enumeration value="Last reviewed"/>
-                            <xs:enumeration value="Loan"/>
-                            <xs:enumeration value="Main signature"/>
-                            <xs:enumeration value="Modified"/>
-                            <xs:enumeration value="Moved"/>
-                            <xs:enumeration value="Opened"/>
-                            <xs:enumeration value="Opening date"/>
-                            <xs:enumeration value="Originated"/>
-                            <xs:enumeration value="Other signature"/>
-                            <xs:enumeration value="Ownership start"/>
-                            <xs:enumeration value="Prepared"/>
-                            <xs:enumeration value="Received"/>
-                            <xs:enumeration value="Received at Location"/>
-                            <xs:enumeration value="Relocated"/>
-                            <xs:enumeration value="Rendered"/>
-                            <xs:enumeration value="Reviewed"/>
-                            <xs:enumeration value="Sent"/>
-                            <xs:enumeration value="Start"/>
-                            <xs:enumeration value="Take back"/>
-                            <xs:enumeration value="Transferred"/>                            
-                            <xs:enumeration value="Other"/>
+                            <xs:enumeration value="aggregated"/>
+                            <xs:enumeration value="appraisal"/>
+                            <xs:enumeration value="archived"/>
+                            <xs:enumeration value="archiving"/>
+                            <xs:enumeration value="captured"/>
+                            <xs:enumeration value="checked_in"/>
+                            <xs:enumeration value="checked_out"/>
+                            <xs:enumeration value="classification"/>
+                            <xs:enumeration value="closed"/>
+                            <xs:enumeration value="confidentiality_Assessed"/>
+                            <xs:enumeration value="created"/>
+                            <xs:enumeration value="decision"/>
+                            <xs:enumeration value="decision_date"/>
+                            <xs:enumeration value="decision_deadline"/>
+                            <xs:enumeration value="decrypted"/>
+                            <xs:enumeration value="deleted"/>
+                            <xs:enumeration value="destroyed"/>
+                            <xs:enumeration value="dispatch"/>
+                            <xs:enumeration value="encrypted"/>
+                            <xs:enumeration value="end"/>
+                            <xs:enumeration value="expedited"/>
+                            <xs:enumeration value="expiration"/>
+                            <xs:enumeration value="finished"/>
+                            <xs:enumeration value="first_used"/>
+                            <xs:enumeration value="last_addition"/>
+                            <xs:enumeration value="last_addition_timestamp"/>
+                            <xs:enumeration value="last_reviewed"/>
+                            <xs:enumeration value="loan"/>
+                            <xs:enumeration value="main_signature"/>
+                            <xs:enumeration value="modified"/>
+                            <xs:enumeration value="moved"/>
+                            <xs:enumeration value="opened"/>
+                            <xs:enumeration value="opening_date"/>
+                            <xs:enumeration value="originated"/>
+                            <xs:enumeration value="other_signature"/>
+                            <xs:enumeration value="ownership_start"/>
+                            <xs:enumeration value="prepared"/>
+                            <xs:enumeration value="received"/>
+                            <xs:enumeration value="received_at_location"/>
+                            <xs:enumeration value="relocated"/>
+                            <xs:enumeration value="rendered"/>
+                            <xs:enumeration value="reviewed"/>
+                            <xs:enumeration value="sent"/>
+                            <xs:enumeration value="start"/>
+                            <xs:enumeration value="take_back"/>
+                            <xs:enumeration value="transferred"/>                            
+                            <xs:enumeration value="other"/>
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:attribute>
-                <xs:attribute name="otherdatetype" type="xs:string" use="optional">
+                <xs:attribute name="otherDateType" type="xs:string" use="optional">
                     <xs:annotation>
-                        <xs:documentation xml:lang="en">When DateType is set to "Other" this attribute is used to state the type of date</xs:documentation>
+                        <xs:documentation xml:lang="en">When dateType is set to "other" this attribute is used to state the type of date</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
 
-    <xs:complexType name="addresslinetype">
+    <xs:complexType name="addressLineType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of all different kinds of address line types that can be used. Can have value other with thenn own created extending value.</xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute name="adresstype" use="required">
+                <xs:attribute name="adressType" use="required">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
-                            <xs:enumeration value="Postal Address"/>
-                            <xs:enumeration value="Postal Code"/>
-                            <xs:enumeration value="Postal City"/>
-                            <xs:enumeration value="Post Box"/>
-                            <xs:enumeration value="Municipality Code"/>
-                            <xs:enumeration value="Municipality"/>
-                            <xs:enumeration value="Parish"/>
-                            <xs:enumeration value="Parish Code"/>
-                            <xs:enumeration value="Province"/>
-                            <xs:enumeration value="County"/>
-                            <xs:enumeration value="Country"/>
-                            <xs:enumeration value="Other"/>
+                            <xs:enumeration value="postal_address"/>
+                            <xs:enumeration value="postal_code"/>
+                            <xs:enumeration value="postal_city"/>
+                            <xs:enumeration value="post_box"/>
+                            <xs:enumeration value="municipality_code"/>
+                            <xs:enumeration value="municipality"/>
+                            <xs:enumeration value="parish"/>
+                            <xs:enumeration value="parish_code"/>
+                            <xs:enumeration value="province"/>
+                            <xs:enumeration value="county"/>
+                            <xs:enumeration value="country"/>
+                            <xs:enumeration value="other"/>
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:attribute>
-                <xs:attribute name="otheraddresslinetype" type="xs:string" use="optional">
+                <xs:attribute name="otherAddressLineType" type="xs:string" use="optional">
                     <xs:annotation>
-                        <xs:documentation xml:lang="en">When AddressType is set to Other this attribute is used to state the type of address line</xs:documentation>
+                        <xs:documentation xml:lang="en">When addressType is set to "other" this attribute is used to state the type of address line</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
 
-    <xs:complexType name="contactlinetype">
+    <xs:complexType name="contactLineType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of all different kind of contact line type that can be used. With value other an own created extending value can be used</xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute name="contacttype" use="required">
+                <xs:attribute name="contactType" use="required">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
-                            <xs:enumeration value="Phonenumber"/>
-                            <xs:enumeration value="Mobilenumber"/>
-                            <xs:enumeration value="Fax"/>
-                            <xs:enumeration value="Email"/>
-                            <xs:enumeration value="Homepage"/>
-                            <xs:enumeration value="Other"/>
+                            <xs:enumeration value="phonenumber"/>
+                            <xs:enumeration value="mobilenumber"/>
+                            <xs:enumeration value="fax"/>
+                            <xs:enumeration value="email"/>
+                            <xs:enumeration value="homepage"/>
+                            <xs:enumeration value="other"/>
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:attribute>
-                <xs:attribute name="othercontactlinetype" type="xs:string" use="optional">
+                <xs:attribute name="otherContactLineType" type="xs:string" use="optional">
                     <xs:annotation>
-                        <xs:documentation xml:lang="en">When ContactType is set to Other this attribute is used to state the type of contact line</xs:documentation>
+                        <xs:documentation xml:lang="en">When contactType is set to "other" this attribute is used to state the type of contact line</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
 
-    <xs:element name="dates" type="datestype">
+    <xs:element name="dates" type="datesType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Grouping of dates</xs:documentation>
         </xs:annotation>
     </xs:element>
 
-    <xs:complexType name="datestype">
+    <xs:complexType name="datesType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of grouping of dates</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="date" maxOccurs="unbounded" type="datetypecomplex"/>
+            <xs:element name="date" maxOccurs="unbounded" type="dateTypeComplex"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="durationtype">
+    <xs:complexType name="durationType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of duration element</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="dates" type="datestype" minOccurs="0">
+            <xs:element name="dates" type="datesType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Grouping of dates belonging to the duration</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="calculatedduration" type="xs:string" minOccurs="0">
+            <xs:element name="calculatedDuration" type="xs:string" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">The calculated duration if no start or end date exists.</xs:documentation>
                 </xs:annotation>
@@ -485,13 +487,13 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:element name="agent" type="agentcomplextype">
+    <xs:element name="agent" type="agentComplexType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Agents in any form handling the aggregation or record</xs:documentation>
         </xs:annotation>
     </xs:element>
 
-    <xs:complexType name="agentcomplextype">
+    <xs:complexType name="agentComplexType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of one agent and its elements and attributes</xs:documentation>
         </xs:annotation>
@@ -501,7 +503,7 @@
                     <xs:documentation xml:lang="en">Name of person or organisation</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element ref="agentextendinginformation" minOccurs="0">
+            <xs:element ref="agentExtendingInformation" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">The agent can be described with a different kind of XML-schema</xs:documentation>
                 </xs:annotation>
@@ -511,12 +513,12 @@
                     <xs:documentation xml:lang="en">Name of organisation</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="unitname" type="xs:string" minOccurs="0">
+            <xs:element name="unitName" type="xs:string" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Unit name</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element ref="idnumber" minOccurs="0">
+            <xs:element ref="idNumber" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">ID-for person or organisation</xs:documentation>
                 </xs:annotation>
@@ -526,81 +528,81 @@
                     <xs:documentation xml:lang="en">Role of the agent</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="addresscontactinformation" minOccurs="0">
+            <xs:element name="addressContactInformation" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Address and contact information</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="addressline" type="addresslinetype" minOccurs="1"
+                        <xs:element name="addressLine" type="addressLineType" minOccurs="1"
                             maxOccurs="unbounded"/>
-                        <xs:element name="contactline" type="contactlinetype" minOccurs="1"
+                        <xs:element name="contactLine" type="contactLineType" minOccurs="1"
                             maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="protectedidentity" type="xs:boolean" minOccurs="0">
+            <xs:element name="protectedIdentity" type="xs:boolean" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Person has protected identity</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
-        <xs:attribute name="agenttype" use="required">
+        <xs:attribute name="agentType" use="required">
             <xs:annotation>
                 <xs:documentation xml:lang="en">Required typing of the agent. When set to the value other a customised (own) extending value can be given with the attribute OtherAgentType</xs:documentation>
                 <xs:documentation xml:lang="en">2020-02-11 update in value list. "Authorizing person" -> "Authorising person"</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
                 <xs:restriction base="xs:string">
-                    <xs:enumeration value="Administrator"/>
-                    <xs:enumeration value="Agent"/>
-                    <xs:enumeration value="Archiver"/>
-                    <xs:enumeration value="Authorising person"/>
-                    <xs:enumeration value="Borrower"/>
-                    <xs:enumeration value="Counterpart"/>
-                    <xs:enumeration value="Creator"/>
-                    <xs:enumeration value="Custodian"/>
-                    <xs:enumeration value="Deliverer"/>
-                    <xs:enumeration value="Dispatcher"/>
-                    <xs:enumeration value="Editor"/>
-                    <xs:enumeration value="IPP Owner"/>
-                    <xs:enumeration value="Main signatory"/>
-                    <xs:enumeration value="Mover"/>
-                    <xs:enumeration value="Opening person"/>
-                    <xs:enumeration value="Other signatory"/>
-                    <xs:enumeration value="Owner"/>
-                    <xs:enumeration value="Reader"/>
-                    <xs:enumeration value="Recipient"/>
-                    <xs:enumeration value="Receiver"/>
-                    <xs:enumeration value="Relocator"/>
-                    <xs:enumeration value="Responsible person"/>
-                    <xs:enumeration value="Sender"/>
-                    <xs:enumeration value="User"/>
-                    <xs:enumeration value="Other"/>
+                    <xs:enumeration value="administrator"/>
+                    <xs:enumeration value="agent"/>
+                    <xs:enumeration value="archiver"/>
+                    <xs:enumeration value="authorising_person"/>
+                    <xs:enumeration value="borrower"/>
+                    <xs:enumeration value="counterpart"/>
+                    <xs:enumeration value="creator"/>
+                    <xs:enumeration value="custodian"/>
+                    <xs:enumeration value="deliverer"/>
+                    <xs:enumeration value="dispatcher"/>
+                    <xs:enumeration value="editor"/>
+                    <xs:enumeration value="ipp_owner"/>
+                    <xs:enumeration value="main_signatory"/>
+                    <xs:enumeration value="mover"/>
+                    <xs:enumeration value="opening_person"/>
+                    <xs:enumeration value="other_signatory"/>
+                    <xs:enumeration value="owner"/>
+                    <xs:enumeration value="reader"/>
+                    <xs:enumeration value="recipient"/>
+                    <xs:enumeration value="receiver"/>
+                    <xs:enumeration value="relocator"/>
+                    <xs:enumeration value="responsible_person"/>
+                    <xs:enumeration value="sender"/>
+                    <xs:enumeration value="user"/>
+                    <xs:enumeration value="other"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
-        <xs:attribute name="otheragenttype" type="xs:string" use="optional">
+        <xs:attribute name="otherAgentType" type="xs:string" use="optional">
             <xs:annotation>
-                <xs:documentation xml:lang="en">When attribute AgentType has value other, this attribute is used to give the Agent Type</xs:documentation>
+                <xs:documentation xml:lang="en">When attribute agentType has value "other", this attribute is used to give the Agent Type</xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
 
 
-    <xs:element name="appendix" type="appendixtype">
+    <xs:element name="appendix" type="appendixType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Reference to files</xs:documentation>
         </xs:annotation>
     </xs:element>
 
-    <xs:complexType name="appendixtype">
+    <xs:complexType name="appendixType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of the brief information regarding an appendix</xs:documentation>
             <xs:documentation xml:lang="en">2020-02-11 EsignatureHaveExisted -> EsignatureHasExisted</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="esignature" type="esignaturecomplextype" minOccurs="0"/>
+            <xs:element name="eSignature" type="eSignatureComplexType" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="disposable" type="xs:boolean" use="optional">
             <xs:annotation>
@@ -617,12 +619,12 @@
                 <xs:documentation xml:lang="en">Description of appendix</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="fileformat" type="xs:string" use="optional">
+        <xs:attribute name="fileFormat" type="xs:string" use="optional">
             <xs:annotation>
                 <xs:documentation xml:lang="en">File format of appendix</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="originalfileformat" type="xs:string" use="optional">
+        <xs:attribute name="originalFileFormat" type="xs:string" use="optional">
             <xs:annotation>
                 <xs:documentation xml:lang="en">Original file format of appendix</xs:documentation>
             </xs:annotation>
@@ -632,25 +634,25 @@
                 <xs:documentation xml:lang="en">Name and path to the file in the form: file:///path/to/file</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="esignaturehasexisted" type="xs:boolean" use="optional">
+        <xs:attribute name="eSignatureHasExisted" type="xs:boolean" use="optional">
             <xs:annotation>
                 <xs:documentation xml:lang="en">Marker for the appendix having had an electronic signature</xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
 
-    <xs:element name="ownelement">
+    <xs:element name="ownElement">
         <xs:annotation>
             <xs:documentation xml:lang="sv">An extending customised (own) element for creating a small number of elements</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="ownelementdescription" minOccurs="0" type="xs:string">
+                <xs:element name="ownElementDescription" minOccurs="0" type="xs:string">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Brief explanation of the custom-defined (own) elements and their use</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="ownelement" type="ownelementtype" minOccurs="0"
+                <xs:element name="ownElement" type="ownElementType" minOccurs="0"
                     maxOccurs="unbounded">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Simple way of adding a small number of elements extending the use of the schema.</xs:documentation>
@@ -660,14 +662,14 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:complexType name="ownelementtype">
+    <xs:complexType name="ownElementType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Extending element</xs:documentation>
         </xs:annotation>
         <xs:sequence>
             <xs:element ref="value" minOccurs="0"/>
             <xs:element ref="property" minOccurs="0"/>
-            <xs:element name="ownelement" type="ownelementtype" minOccurs="0" maxOccurs="unbounded"
+            <xs:element name="ownElement" type="ownElementType" minOccurs="0" maxOccurs="unbounded"
             />
         </xs:sequence>
         <xs:attribute name="name" use="required" type="xs:string">
@@ -675,7 +677,7 @@
                 <xs:documentation xml:lang="en">Name of customised (own) defined element</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="datatype" type="xs:string">
+        <xs:attribute name="dataType" type="xs:string">
             <xs:annotation>
                 <xs:documentation xml:lang="en">Datatype for customised (own) defined  element</xs:documentation>
             </xs:annotation>
@@ -718,7 +720,7 @@
                     <xs:documentation xml:lang="en">Name of custom defined (own) defined element</xs:documentation>
                 </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="datatype" type="xs:string" use="optional">
+            <xs:attribute name="dataType" type="xs:string" use="optional">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Datatype for custom defined (own) defined element</xs:documentation>
                 </xs:annotation>
@@ -731,69 +733,69 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="disposal" type="disposaltype">
+    <xs:element name="disposal" type="disposalType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Information regarding disposal. For long term storage this should already have been carried out.</xs:documentation>
         </xs:annotation>
     </xs:element>
 
-    <xs:complexType name="disposaltype">
+    <xs:complexType name="disposalType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of the element for information regarding disposal</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="defaultdisposalscheduleid" type="xs:string" minOccurs="0">
+            <xs:element name="defaultDisposalScheduleId" type="xs:string" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Identification for the default disposal schedule used</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="disposalscheduleid" type="xs:string" minOccurs="0">
+            <xs:element name="disposalScheduleId" type="xs:string" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Identification for the disposal schedule used</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="disposalaction" type="xs:string" minOccurs="0">
+            <xs:element name="disposalAction" type="xs:string" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Code describing the action to be taken on disposal of the record</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="disposalperiod" type="xs:string" minOccurs="0">
+            <xs:element name="disposalPeriod" type="xs:string" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Value describing when disposal can be made</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="disposalmandate" type="xs:string" minOccurs="0">
+            <xs:element name="disposalMandate" type="xs:string" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Mandate for the disposal</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="disposaldescription" type="xs:string" minOccurs="0">
+            <xs:element name="disposalDescription" type="xs:string" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Description of disposal rules</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="disposalcomments" minOccurs="0">
+            <xs:element name="disposalComments" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Either one comment or a number of comments grouped in the element DisposalComments</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="cisposalcomment" type="xs:string" minOccurs="1"
+                        <xs:element name="disposalComment" type="xs:string" minOccurs="1"
                             maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="lastrevieweddisposalcomment" type="xs:string" minOccurs="0">
+            <xs:element name="lastReviewedDisposalComment" type="xs:string" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Comment made by the user that last reviewed the record explaining the disposal decision made by that reviewer</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="disposingperson" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="disposingPerson" type="xs:string" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Disposing person</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="supervisingperson" type="xs:string" minOccurs="0"
+            <xs:element name="supervisingPerson" type="xs:string" minOccurs="0"
                 maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Person supervising the disposal</xs:documentation>
@@ -805,7 +807,7 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence maxOccurs="unbounded">
-                        <xs:element name="disposaldate" type="disposaldatetypes"/>
+                        <xs:element name="disposalDate" type="disposalDateTypes"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -817,47 +819,47 @@
         </xs:attribute>
     </xs:complexType>
 
-    <xs:complexType name="disposaldatetypes">
+    <xs:complexType name="disposalDateTypes">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of typing of a date related to the disposal. using the value other gives the possibility to use a customised (own) extending date type in the attribute Other DisposalDateType</xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:dateTime">
-                <xs:attribute name="datetype" use="required" >
+                <xs:attribute name="dateType" use="required" >
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
-                            <xs:enumeration value="Action due"/>
-                            <xs:enumeration value="Applied"/>
-                            <xs:enumeration value="Confirmation due"/>
-                            <xs:enumeration value="Disposal date"/>
-                            <xs:enumeration value="Lifted"/>
-                            <xs:enumeration value="Overdue alert"/>
-                            <xs:enumeration value="Retention period start"/>
-                            <xs:enumeration value="Retention period end"/>
-                            <xs:enumeration value="Other date"/>
+                            <xs:enumeration value="action_due"/>
+                            <xs:enumeration value="applied"/>
+                            <xs:enumeration value="confirmation_due"/>
+                            <xs:enumeration value="disposal_date"/>
+                            <xs:enumeration value="lifted"/>
+                            <xs:enumeration value="overdue_alert"/>
+                            <xs:enumeration value="retention_period_start"/>
+                            <xs:enumeration value="retention_period_end"/>
+                            <xs:enumeration value="other_date"/>
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:attribute>
-                <xs:attribute name="otherdisposaldatetype" type="xs:string" use="optional">
+                <xs:attribute name="otherDisposalDateType" type="xs:string" use="optional">
                     <xs:annotation>
-                        <xs:documentation xml:lang="en">When OtherDisposalDateType is set to "Other date" this attribute is used to state the type of date</xs:documentation>
+                        <xs:documentation xml:lang="en">When otherDisposalDateType is set to "other_date" this attribute is used to state the type of date</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
 
-    <xs:complexType name="loantype">
+    <xs:complexType name="loanType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of information about loan</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="agent" type="agentcomplextype" minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="agent" type="agentComplexType" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Agents involved in the loan as borrower, Authorizing person, person responsible for the takeback</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="dates" type="datestype" minOccurs="0">
+            <xs:element name="dates" type="datesType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Dates associated with the loan</xs:documentation>
                 </xs:annotation>
@@ -870,28 +872,28 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="ipptype">
+    <xs:complexType name="ippType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of IPP (Intellectual Property Protection) information elements</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="agent" type="agentcomplextype" minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="agent" type="agentComplexType" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Agent in the form of an IPP owner</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="reproductionconditions" type="xs:string" minOccurs="0"
+            <xs:element name="reproductionConditions" type="xs:string" minOccurs="0"
                 maxOccurs="unbounded">
                 <xs:annotation>
-                    <xs:documentation xml:lang="en">IPP condition description</xs:documentation>
+                    <xs:documentation xml:lang="en">IPP condition description regarding reproduction</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="ippduration" type="durationtype" minOccurs="0">
+            <xs:element name="ippDuration" type="durationType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">The duration for the IPP rights</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="ipptype" type="xs:string" minOccurs="0">
+            <xs:element name="ippType" type="xs:string" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Reference to IPP type according to legislative act.</xs:documentation>
                 </xs:annotation>
@@ -899,18 +901,18 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:element name="restriction" type="restrictionstype">
+    <xs:element name="restriction" type="restrictionsType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Use one for each restriction</xs:documentation>
         </xs:annotation>
     </xs:element>
 
-    <xs:complexType name="restrictionstype">
+    <xs:complexType name="restrictionsType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of the type for describing restrictions</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="explanatorytext" minOccurs="0" type="xs:string">
+            <xs:element name="explanatoryText" minOccurs="0" type="xs:string">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Text field for describing the restriction</xs:documentation>
                 </xs:annotation>
@@ -920,40 +922,40 @@
                     <xs:documentation xml:lang="en">Describe which regulation and paragraph is used</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element ref="informationclass" minOccurs="0"/>
-            <xs:element ref="securityclass" minOccurs="0"/>
-            <xs:element name="dates" minOccurs="0" maxOccurs="unbounded" type="datestype">
+            <xs:element ref="informationClass" minOccurs="0"/>
+            <xs:element ref="securityClass" minOccurs="0"/>
+            <xs:element name="dates" minOccurs="0" maxOccurs="unbounded" type="datesType">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Dates for the restriction</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="duration" minOccurs="0" maxOccurs="unbounded" type="durationtype">
+            <xs:element name="duration" minOccurs="0" maxOccurs="unbounded" type="durationType">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Duration of the restriction</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
-        <xs:attribute name="restrictiontype" use="required">
+        <xs:attribute name="restrictionType" use="required">
             <xs:annotation>
                 <xs:documentation xml:lang="en">Defines the type of the restriction using the value "other type" gives the opportunity to use a customised (own) extending value in the attribue "OtherRestrictionType"</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
                 <xs:restriction base="xs:string">
-                    <xs:enumeration value="Confidential"/>
-                    <xs:enumeration value="GDPR"/>
-                    <xs:enumeration value="Integrity"/>
-                    <xs:enumeration value="Other type"/>
+                    <xs:enumeration value="confidential"/>
+                    <xs:enumeration value="gdpr"/>
+                    <xs:enumeration value="integrity"/>
+                    <xs:enumeration value="other_type"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
-        <xs:attribute name="otherrestrictiontype" type="xs:string" use="optional">
+        <xs:attribute name="otherRestrictionType" type="xs:string" use="optional">
             <xs:annotation>
-                <xs:documentation xml:lang="en">Give a customised (own) definition of type. Used when type is "Other type"</xs:documentation>
+                <xs:documentation xml:lang="en">Give a customised (own) definition of type. Used when type is "other_type"</xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
     
-    <xs:element name="additionalinformation">
+    <xs:element name="additionalInformation">
         <xs:annotation>
             <xs:documentation xml:lang="en">Grouping of elements which can be used to insert additional information</xs:documentation>
         </xs:annotation>
@@ -964,17 +966,17 @@
                         <xs:documentation xml:lang="en">Reference to document/file</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element ref="ownelement" minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="ownElement" minOccurs="0" maxOccurs="unbounded">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Small number of custom-defined (own) extending elements</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element ref="additionalxmldata" minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="additionalXMLData" minOccurs="0" maxOccurs="unbounded">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Extending information following another XML-schema</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element ref="additionalbindata" minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="additionalBinData" minOccurs="0" maxOccurs="unbounded">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Extending data in Bin64-format</xs:documentation>
                     </xs:annotation>
@@ -983,20 +985,20 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="additionalxmldata" type="extendingcomplextype">
+    <xs:element name="additionalXMLData" type="extendingComplexType">
         <xs:annotation>
             <xs:documentation xml:lang="en">XML-wrapper</xs:documentation>
         </xs:annotation>
     </xs:element>
 
-    <xs:element name="additionalbindata" type="xs:base64Binary">
+    <xs:element name="additionalBinData" type="xs:base64Binary">
         <xs:annotation>
             <xs:documentation xml:lang="en"> The binary data wrapper element &lt;binData> is used to contain Base64 encoded metadata.
             </xs:documentation>
         </xs:annotation>
     </xs:element>
 
-    <xs:complexType name="extendingcomplextype">
+    <xs:complexType name="extendingComplexType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of the extending type element</xs:documentation>
             <xs:documentation xml:lang="en">Sometimes other XML-schemas are used for describing information</xs:documentation>
@@ -1007,18 +1009,18 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:element name="systeminformation" type="systeminfotype">
+    <xs:element name="systemInformation" type="systemInfoType">
         <xs:annotation>
             <xs:documentation xml:lang="en">System information</xs:documentation>
         </xs:annotation>
     </xs:element>
 
-    <xs:complexType name="systeminfotype">
+    <xs:complexType name="systemInfoType">
         <xs:annotation>
             <xs:documentation xml:lang="en">DEfintion of the system information is exported in its own XML-format</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="extrametadatainformation" type="extendingcomplextype" minOccurs="0">
+            <xs:element name="extraMetadataInformation" type="extendingComplexType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Extending information in XML format</xs:documentation>
                 </xs:annotation>
@@ -1029,14 +1031,14 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="agent" type="agentcomplextype" minOccurs="0"/>
+                        <xs:element name="agent" type="agentComplexType" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="controltype">
+    <xs:complexType name="controlType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of an element with information on top level describing for example identifications, maintenance</xs:documentation>
         </xs:annotation>
@@ -1046,17 +1048,17 @@
                     <xs:documentation xml:lang="en">Element for adding identification like for example identification in archival description on top level</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element ref="informationclass" minOccurs="0">
+            <xs:element ref="informationClass" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Information class for the whole document based on information security classification</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element ref="classificationschema" minOccurs="0">
+            <xs:element ref="classificationSchema" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Element for describing the used classification schema in the XML-document</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element ref="securityclass" minOccurs="0">
+            <xs:element ref="securityClass" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Security classification for the whole document</xs:documentation>
                 </xs:annotation>
@@ -1066,12 +1068,12 @@
                     <xs:documentation xml:lang="en">A possibility to add dates at a high level concerning the document</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="maintenanceinformation" type="maintenancetype">
+            <xs:element name="maintenanceInformation" type="maintenanceType">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Maintenance information regarding the document itself</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element ref="systeminformation" minOccurs="0">
+            <xs:element ref="systemInformation" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Element uses XML exported from the system in its own format</xs:documentation>
                 </xs:annotation>
@@ -1079,12 +1081,12 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="maintenancetype">
+    <xs:complexType name="maintenanceType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of all elements concerning maintenance</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="maintenancestatus">
+            <xs:element name="maintenanceStatus">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Maintenance status</xs:documentation>
                 </xs:annotation>
@@ -1105,16 +1107,16 @@
                     </xs:attribute>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="maintenanceagency">
+            <xs:element name="maintenanceAgency">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Maintenance agency</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="agencycode" type="agencycodetype" minOccurs="0"/>
-                        <xs:element name="otheragencycode" type="otheragencycodetype" minOccurs="0"
+                        <xs:element name="agencyCode" type="agencyCodeType" minOccurs="0"/>
+                        <xs:element name="otherAgencyCode" type="otherAgencyCodeType" minOccurs="0"
                             maxOccurs="unbounded"/>
-                        <xs:element name="agencyname" type="xs:string" maxOccurs="unbounded">
+                        <xs:element name="agencyName" type="xs:string" maxOccurs="unbounded">
                             <xs:annotation>
                                 <xs:documentation xml:lang="en">Name of the agency</xs:documentation>
                             </xs:annotation>
@@ -1123,19 +1125,19 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="maintenancehistory">
+            <xs:element name="maintenanceHistory">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Maintenance history</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="maintenanceevent" maxOccurs="unbounded">
+                        <xs:element name="maintenanceEvent" maxOccurs="unbounded">
                             <xs:annotation>
                                 <xs:documentation xml:lang="en">A description of each maintenance event for the XML document</xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="eventtype">
+                                    <xs:element name="eventType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="en">Type of event</xs:documentation>
                                         </xs:annotation>
@@ -1143,25 +1145,25 @@
                                             <xs:attribute name="value" use="required">
                                                 <xs:simpleType>
                                             <xs:restriction base="xs:token">
-                                                <xs:enumeration value="Created"/>
-                                                <xs:enumeration value="Revised"/>
-                                                <xs:enumeration value="Deleted"/>
-                                                <xs:enumeration value="Cancelled"/>
-                                                <xs:enumeration value="Derived"/>
-                                                <xs:enumeration value="Updated"/>
-                                                <xs:enumeration value="Unknown"/>
+                                                <xs:enumeration value="created"/>
+                                                <xs:enumeration value="revised"/>
+                                                <xs:enumeration value="deleted"/>
+                                                <xs:enumeration value="cancelled"/>
+                                                <xs:enumeration value="derived"/>
+                                                <xs:enumeration value="updated"/>
+                                                <xs:enumeration value="unknown"/>
                                             </xs:restriction>
                                         </xs:simpleType>
                                             </xs:attribute>
                                         </xs:complexType>
                                         
                                     </xs:element>
-                                    <xs:element name="eventdatetime" type="xs:dateTime">
+                                    <xs:element name="eventDateTime" type="xs:dateTime">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="en">The datetime for the event</xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="agent" type="agentcomplextype">
+                                    <xs:element name="agent" type="agentComplexType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="en">The agent connected with the event</xs:documentation>
                                         </xs:annotation>
@@ -1175,16 +1177,16 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:element name="idnumber">
+    <xs:element name="idNumber">
         <xs:annotation>
             <xs:documentation xml:lang="en">ID number for person or organisation</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:simpleContent>
                 <xs:extension base="xs:string">
-                    <xs:attribute name="idnumbertype" type="xs:string" use="optional">
+                    <xs:attribute name="idNumberType" type="xs:string" use="optional">
                         <xs:annotation>
-                            <xs:documentation xml:lang="en">IDNumberType (string/O): A description of the identifier type (e.g., OCLC record number, LCCN, etc.). </xs:documentation>
+                            <xs:documentation xml:lang="en">idNumberType (string/O): A description of the identifier type (e.g., OCLC record number, LCCN, etc.). </xs:documentation>
                             <xs:documentation xml:lang="en">Values need to be expressed and considered as documentation and follow the submission as documentation</xs:documentation>
                         </xs:annotation>
                     </xs:attribute>
@@ -1193,26 +1195,26 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:complexType name="esignaturecomplextype">
+    <xs:complexType name="eSignatureComplexType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of E-signature information with an attribute indicating it has been present and the option to insert as XML following an e Signature XML-schema</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="signature" type="extendingcomplextype" minOccurs="0"/>
+            <xs:element name="signature" type="extendingComplexType" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="present" type="xs:boolean" use="required">
             <xs:annotation>
                 <xs:documentation xml:lang="en">Attribute indicating whether an e-signature has been present or not</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="dateesignatureisverified" type="xs:dateTime" use="optional">
+        <xs:attribute name="dateeSignatureIsVerified" type="xs:dateTime" use="optional">
             <xs:annotation>
                 <xs:documentation xml:lang="en">Attribute with the datetime giving when the e-signature was verified</xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
 
-    <xs:element name="objectid" type="xs:string">
+    <xs:element name="objectId" type="xs:string">
         <xs:annotation>
             <xs:documentation xml:lang="en">Unique ID for the aggregation or record</xs:documentation>
         </xs:annotation>
@@ -1223,37 +1225,37 @@
             <xs:documentation xml:lang="en">Reference to one or more records or aggregations</xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
-            <xs:attribute name="relationtype" use="required">
+            <xs:attribute name="relationType" use="required">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Describes the relation. Value "Own relation definition" demands use of otherType attribute</xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
-                        <xs:enumeration value="Replaces"/>
-                        <xs:enumeration value="Is replaced with"/>
-                        <xs:enumeration value="Reference"/>
-                        <xs:enumeration value="Referenced by"/>
-                        <xs:enumeration value="Demands"/>
-                        <xs:enumeration value="Needed by"/>
-                        <xs:enumeration value="Contains"/>
-                        <xs:enumeration value="Part of"/>
-                        <xs:enumeration value="Other format version"/>
-                        <xs:enumeration value="Another format version of"/>
-                        <xs:enumeration value="Has version"/>
-                        <xs:enumeration value="Is version of"/>
-                        <xs:enumeration value="Is redacted version of"/>
-                        <xs:enumeration value="Has redacted version"/>
-                        <xs:enumeration value="Rendition version of"/>
-                        <xs:enumeration value="Has rendition version"/>
-                        <xs:enumeration value="Is child of"/>
-                        <xs:enumeration value="Is parent of"/>
-                        <xs:enumeration value="Own relation definition"/>
+                        <xs:enumeration value="replaces"/>
+                        <xs:enumeration value="is_replaced_with"/>
+                        <xs:enumeration value="reference"/>
+                        <xs:enumeration value="referenced_by"/>
+                        <xs:enumeration value="demands"/>
+                        <xs:enumeration value="needed_by"/>
+                        <xs:enumeration value="contains"/>
+                        <xs:enumeration value="part_of"/>
+                        <xs:enumeration value="other_format_version"/>
+                        <xs:enumeration value="another_format_version_of"/>
+                        <xs:enumeration value="has_version"/>
+                        <xs:enumeration value="is_version_of"/>
+                        <xs:enumeration value="is_redacted_version_of"/>
+                        <xs:enumeration value="has_redacted_version"/>
+                        <xs:enumeration value="rendition_version_of"/>
+                        <xs:enumeration value="has_rendition_version"/>
+                        <xs:enumeration value="is_child_of"/>
+                        <xs:enumeration value="is_parent_of"/>
+                        <xs:enumeration value="own_relation_definition"/>
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
-            <xs:attribute name="oherrelationtype" type="xs:string" use="optional">
+            <xs:attribute name="oherRelationType" type="xs:string" use="optional">
                 <xs:annotation>
-                    <xs:documentation xml:lang="en">When value "Own relation definition" is used</xs:documentation>
+                    <xs:documentation xml:lang="en">When value "own_relation_definition" is used</xs:documentation>
                 </xs:annotation>
             </xs:attribute>
         </xs:complexType>
@@ -1265,18 +1267,18 @@
         </xs:annotation>
     </xs:element>
 
-    <xs:element name="physicallocation">
+    <xs:element name="physicalLocation">
         <xs:annotation>
             <xs:documentation xml:lang="en">Physical or logical placement of the aggregation or record</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="currentlocation" type="xs:string" minOccurs="0">
+                <xs:element name="currentLocation" type="xs:string" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Where the placement currently is</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="homelocation" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="homeLocation" type="xs:string" minOccurs="0" maxOccurs="unbounded">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">The placement seen as home for the aggregation or record</xs:documentation>
                     </xs:annotation>
@@ -1292,33 +1294,33 @@
         </xs:annotation>
     </xs:element>
 
-    <xs:element name="action" type="actiontype">
+    <xs:element name="action" type="actionType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Action preformed, including decisions made</xs:documentation>
         </xs:annotation>
     </xs:element>
 
-    <xs:complexType name="actiontype">
+    <xs:complexType name="actionType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of all elements involved in a action. The action can for example be an decision</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="actiontext" type="xs:string">
+            <xs:element name="actionText" type="xs:string">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Description of the action preformed</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="actiondue" minOccurs="0" type="xs:string">
+            <xs:element name="actionDue" minOccurs="0" type="xs:string">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">The regulations used for making the action</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="actionmotivation" minOccurs="0" type="xs:string">
+            <xs:element name="actionMotivation" minOccurs="0" type="xs:string">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">The motivation for the action</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="actiontype" minOccurs="0" type="xs:string">
+            <xs:element name="actionType" minOccurs="0" type="xs:string">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">All actions are following a action type and its regulation</xs:documentation>
                 </xs:annotation>
@@ -1329,7 +1331,7 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence maxOccurs="unbounded">
-                        <xs:element name="actiondate" type="datetypecomplex" maxOccurs="unbounded"
+                        <xs:element name="actionDate" type="dateTypeComplex" maxOccurs="unbounded"
                         />
                     </xs:sequence>
                 </xs:complexType>
@@ -1340,7 +1342,7 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence maxOccurs="unbounded">
-                        <xs:element name="agent" type="agentcomplextype" maxOccurs="unbounded"/>
+                        <xs:element name="agent" type="agentComplexType" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
                 
@@ -1348,13 +1350,13 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:element name="dispatchmode" type="xs:string">
+    <xs:element name="dispatchMode" type="xs:string">
         <xs:annotation>
             <xs:documentation xml:lang="en">Mode of dispatching of the record</xs:documentation>
         </xs:annotation>
     </xs:element>
 
-    <xs:element name="extraid">
+    <xs:element name="extraId">
         <xs:annotation>
             <xs:documentation xml:lang="en">Extra identification of the aggregation or record. Type of extra identification is declared in the attribute ”ExtraIDType"</xs:documentation>
             <xs:documentation xml:lang="en">Not to be used as extra identifications that can occur in the element Identification</xs:documentation>
@@ -1362,7 +1364,7 @@
         <xs:complexType>
             <xs:simpleContent>
                 <xs:extension base="xs:string">
-                    <xs:attribute name="extraidtype" type="xs:string" use="required">
+                    <xs:attribute name="extraIdType" type="xs:string" use="required">
                         <xs:annotation>
                             <xs:documentation xml:lang="en">A description of the identifier type (e.g., OCLC record number, LCCN, etc.). </xs:documentation>
                         </xs:annotation>
@@ -1372,31 +1374,31 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="parentaggregationid" type="xs:string">
+    <xs:element name="parentAggregationId" type="xs:string">
         <xs:annotation>
             <xs:documentation xml:lang="en">Parent aggregation for a child aggregation or record</xs:documentation>
         </xs:annotation>
     </xs:element>
 
-    <xs:element name="hierarchicalparentclassid" type="xs:string">
+    <xs:element name="hierarchicalParentClassId" type="xs:string">
         <xs:annotation>
             <xs:documentation xml:lang="en">The parent class for a hierarchical class</xs:documentation>
         </xs:annotation>
     </xs:element>
 
-    <xs:element name="levelname" type="xs:string">
+    <xs:element name="levelName" type="xs:string">
         <xs:annotation>
             <xs:documentation xml:lang="en">Generic element for describing name of level of record or aggregation</xs:documentation>
         </xs:annotation>
     </xs:element>
 
-    <xs:element name="informationclass" type="xs:string">
+    <xs:element name="informationClass" type="xs:string">
         <xs:annotation>
             <xs:documentation xml:lang="en">Describe the information class following the rules of classification of information</xs:documentation>
         </xs:annotation>
     </xs:element>
 
-    <xs:element name="securityclass" type="xs:string">
+    <xs:element name="securityClass" type="xs:string">
         <xs:annotation>
             <xs:documentation xml:lang="en">Describe the security level</xs:documentation>
         </xs:annotation>
@@ -1409,23 +1411,23 @@
         <xs:complexType>
             <xs:simpleContent>
                 <xs:extension base="xs:string">
-                    <xs:attribute name="classificationid" type="xs:string" use="optional">
+                    <xs:attribute name="classificationId" type="xs:string" use="optional">
                         <xs:annotation>
                             <xs:documentation xml:lang="en">Classification ID</xs:documentation>
                         </xs:annotation>
                     </xs:attribute>
-                    <xs:attribute name="classificationcode" type="xs:string" use="optional">
+                    <xs:attribute name="classificationCode" type="xs:string" use="optional">
                         <xs:annotation>
                             <xs:documentation xml:lang="en">Classification Code</xs:documentation>
                         </xs:annotation>
                     </xs:attribute>
-                    <xs:attribute name="fullyqualifiedclassificationcode" type="xs:string"
+                    <xs:attribute name="fullyQualifiedClassificationCode" type="xs:string"
                         use="optional">
                         <xs:annotation>
                             <xs:documentation xml:lang="en">The hierarchical identifier of the entity, unique within the ERMS</xs:documentation>
                         </xs:annotation>
                     </xs:attribute>
-                    <xs:attribute name="newfullyqualifiedclassificationcode" type="xs:string"
+                    <xs:attribute name="newFullyQualifiedClassificationCode" type="xs:string"
                         use="optional">
                         <xs:annotation>
                             <xs:documentation xml:lang="en">The hierarchical identifier of the entity, unique within the ERMS</xs:documentation>
@@ -1451,13 +1453,13 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="runningnumber" type="xs:int">
+    <xs:element name="runningNumber" type="xs:int">
         <xs:annotation>
             <xs:documentation xml:lang="en">RunningNumber</xs:documentation>
         </xs:annotation>
     </xs:element>
 
-    <xs:element name="maxlevelsofaggregation" type="xs:int">
+    <xs:element name="maxLevelsOfAggregation" type="xs:int">
         <xs:annotation>
             <xs:documentation xml:lang="en">The maximum levels of aggregation allowed below a root aggregation</xs:documentation>
         </xs:annotation>
@@ -1476,12 +1478,12 @@
         <xs:complexType>
             <xs:simpleContent>
                 <xs:extension base="xs:string">
-                    <xs:attribute name="notetype" type="xs:string" use="optional">
+                    <xs:attribute name="noteType" type="xs:string" use="optional">
                         <xs:annotation>
                             <xs:documentation xml:lang="en">A description of the type of note for example; ScopeNote, RenditionNote, ReclassificationNote</xs:documentation>
                         </xs:annotation>
                     </xs:attribute>
-                    <xs:attribute name="notedate" type="xs:dateTime" use="optional">
+                    <xs:attribute name="noteDate" type="xs:dateTime" use="optional">
                         <xs:annotation>
                             <xs:documentation xml:lang="en">Date the note was made</xs:documentation>
                         </xs:annotation>
@@ -1497,19 +1499,19 @@
         </xs:annotation>
     </xs:element>
     
-    <xs:element name="othertitle" type="othertitletype">
+    <xs:element name="otherTitle" type="otherTitleType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Any other titles associated with the record or aggregation, generated by the system or created manually</xs:documentation>
         </xs:annotation>
     </xs:element>
     
-    <xs:complexType name="othertitletype">
+    <xs:complexType name="otherTitleType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of element for any other titles associated with the record or aggregation, generated by the system or created manually</xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute name="titletype" type="xs:string" use="required">
+                <xs:attribute name="titleType" type="xs:string" use="required">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Attribute for specifiying type type of the other title</xs:documentation>
                     </xs:annotation>
@@ -1532,47 +1534,47 @@
             <xs:attribute name="value" use="optional">
                 <xs:simpleType>
             <xs:restriction base="xs:string">
-                <xs:enumeration value="Ad Acta"/>
-                <xs:enumeration value="Closed"/>
-                <xs:enumeration value="Expedited"/>
-                <xs:enumeration value="Initiated"/>
-                <xs:enumeration value="In progress"/>
-                <xs:enumeration value="Obliterated"/>
-                <xs:enumeration value="On hold"/>
-                <xs:enumeration value="Open"/>
-                <xs:enumeration value="Prepared"/>
-                <xs:enumeration value="Received"/>
+                <xs:enumeration value="ad_acta"/>
+                <xs:enumeration value="closed"/>
+                <xs:enumeration value="expedited"/>
+                <xs:enumeration value="initiated"/>
+                <xs:enumeration value="in_progress"/>
+                <xs:enumeration value="obliterated"/>
+                <xs:enumeration value="on_hold"/>
+                <xs:enumeration value="open"/>
+                <xs:enumeration value="prepared"/>
+                <xs:enumeration value="received"/>
             </xs:restriction>
         </xs:simpleType>
             </xs:attribute>
         </xs:complexType>        
     </xs:element>
 
-    <xs:element name="direction" type="directiontype">
+    <xs:element name="direction" type="directionType">
         <xs:annotation>
             <xs:documentation xml:lang="en">A record is sometimes given a direction of either being outgoing or incoming as well as other values depending on your system. In this element it is possible to save the direction using the fixed terms outgoing and incoming.</xs:documentation>
         </xs:annotation>
     </xs:element>
     
-    <xs:complexType name="directiontype" mixed="true">
-        <xs:attribute name="directiondefinition" use="required">
+    <xs:complexType name="directionType" mixed="true">
+        <xs:attribute name="directionDefinition" use="required">
             <xs:annotation>
                 <xs:documentation xml:lang="en">Definition of the element for giving of direction following the preset value list.</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
                 <xs:restriction base="xs:string">
-                    <xs:enumeration value="Incoming"/>
-                    <xs:enumeration value="Outgoing"/>
-                    <xs:enumeration value="Internal memo for follow-up"/>
-                    <xs:enumeration value="Internal memo without follow-up"/>
-                    <xs:enumeration value="Case draft"/>
-                    <xs:enumeration value="Other"/>
+                    <xs:enumeration value="incoming"/>
+                    <xs:enumeration value="outgoing"/>
+                    <xs:enumeration value="internal_memo_for_follow-up"/>
+                    <xs:enumeration value="internal_memo_without_follow-up"/>
+                    <xs:enumeration value="case_draft"/>
+                    <xs:enumeration value="other"/>
                 </xs:restriction>
             </xs:simpleType>            
         </xs:attribute>
-        <xs:attribute name="otherdirectiondefinition" type="xs:string" use="optional">
+        <xs:attribute name="otherDirectionDefinition" type="xs:string" use="optional">
             <xs:annotation>
-                <xs:documentation xml:lang="en">When the attribute DirectionDefiniton is set to "Other" this attribute is used to state the type of direction</xs:documentation>
+                <xs:documentation xml:lang="en">When the attribute directionDefiniton is set to "other" this attribute is used to state the type of direction</xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
@@ -1584,7 +1586,7 @@
         <xs:complexType>
             <xs:simpleContent>
                 <xs:extension base="xs:string">
-                    <xs:attribute name="identificationtype" type="xs:string" use="required">
+                    <xs:attribute name="identificationType" type="xs:string" use="required">
                         <xs:annotation>
                             <xs:documentation xml:lang="en">IdentificationType (string/O): A
                                 description of the identifier type (e.g., OCLC
@@ -1596,13 +1598,13 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="classificationschema">
+    <xs:element name="classificationSchema">
         <xs:annotation>
             <xs:documentation xml:lang="en">Element for describing the classification schema used in the XML-document</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="textualdescriptionofclassificationschema" minOccurs="0">
+                <xs:element name="textualDescriptionOfClassificationSchema" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">A textual description of the classifications schema made in a customised (own) choice of element p</xs:documentation>
                     </xs:annotation>
@@ -1616,7 +1618,7 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element ref="additionalinformation" minOccurs="0">
+                <xs:element ref="additionalInformation" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Additional information for the classification schema</xs:documentation>
                     </xs:annotation>
@@ -1625,18 +1627,18 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="agentextendinginformation">
+    <xs:element name="agentExtendingInformation">
         <xs:annotation>
             <xs:documentation xml:lang="en">A agent can be described using another standards. In those cases either a file containing the information as an appendix or extending XML information is added</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:choice maxOccurs="1">
-                <xs:element name="agentextendingappendix" type="appendixtype">
+                <xs:element name="agentExtendingAppendix" type="appendixType">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Appendix which points to the agent information</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="agentextendingxmlinformation" type="extendingcomplextype">
+                <xs:element name="agentExtendingXMLInformation" type="extendingComplexType">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Inserted XML which describes the agent</xs:documentation>
                     </xs:annotation>
@@ -1645,27 +1647,27 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:complexType name="otheragencycodetype" mixed="true">
+    <xs:complexType name="otherAgencyCodeType" mixed="true">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of element used when the agency code is of a type not agreed upon</xs:documentation>
         </xs:annotation>
         <xs:attribute name="type" type="xs:string" use="optional"/>
     </xs:complexType>
 
-    <xs:complexType name="agencycodetype" mixed="true">
+    <xs:complexType name="agencyCodeType" mixed="true">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of element for agency code. Attribute type follows decisions made in the submission agreement</xs:documentation>
         </xs:annotation>
         <xs:attribute name="type" type="xs:string" use="required"/>
     </xs:complexType>
     
-    <xs:element name="archivalhistory">
+    <xs:element name="archivalHistory">
         <xs:annotation>
             <xs:documentation xml:lang="en">Information on the history of the unit of description that is significant for its authenticity, integrity and interpretation.</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="historyline" minOccurs="1" maxOccurs="unbounded" type="xs:string">
+                <xs:element name="historyLine" minOccurs="1" maxOccurs="unbounded" type="xs:string">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">Each paragraph of text giving the archival history.</xs:documentation>
                     </xs:annotation>
