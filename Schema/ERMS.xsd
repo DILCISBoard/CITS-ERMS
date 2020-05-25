@@ -344,7 +344,7 @@
                             <xs:enumeration value="checked_out"/>
                             <xs:enumeration value="classification"/>
                             <xs:enumeration value="closed"/>
-                            <xs:enumeration value="confidentiality_Assessed"/>
+                            <xs:enumeration value="confidentiality_assessed"/>
                             <xs:enumeration value="created"/>
                             <xs:enumeration value="decision"/>
                             <xs:enumeration value="decision_date"/>
