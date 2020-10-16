@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- E-ARK ERMS schema version 2.0 2020-08-01 -->
-<!-- Chganges includes correcdtion of elemetnsname and camelcasing, valuelist corrections and lowercase and underscore used instead of spaces.-->
+<!-- Chganges includes correction of elements name and camelcasing, valuelist corrections and lowercase and underscore used instead of spaces.-->
 <!-- E-ARK ERMS schema version 1.0 2019-05-31 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="https://DILCIS.eu/XML/ERMS" targetNamespace="https://DILCIS.eu/XML/ERMS"
     elementFormDefault="qualified">
