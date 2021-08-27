@@ -5,4 +5,4 @@ CSERMS Schema documentation (pdf)
 =======================
 
 - [Schema documentation (pdf)](./ERMS.pdf)
-  Schema documentation for version 1.0 of ERMS schema
+  Schema documentation for draft version 2.0 of ERMS schema
