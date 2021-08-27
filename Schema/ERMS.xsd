@@ -80,6 +80,7 @@
             <xs:element ref="subject" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="status" minOccurs="0"/>
             <xs:element ref="relation" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="additionalInformation" minOccurs="0"/>
             <xs:element ref="restriction" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="IPPInformation" type="ippType" minOccurs="0">
                 <xs:annotation>
@@ -112,17 +113,17 @@
                     <xs:documentation xml:lang="en">A grouping of dates belonging to the aggregation</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element ref="action" minOccurs="0"/>
+            <xs:element ref="action" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="archivalHistory" minOccurs="0"/>
             <xs:element ref="dispatchMode" minOccurs="0"/>
             <xs:element ref="access" minOccurs="0"/>
             <xs:element name="physicalLocations" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation xml:lang="en">Either on physical location or a number of locations grouped in the element PhysicalLocations can be present</xs:documentation>
+                    <xs:documentation xml:lang="en">Either one physical location or a number of locations grouped in the element PhysicalLocations can be present</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element ref="physicalLocation" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="physicalLocation" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -233,19 +234,16 @@
             <xs:element name="loan" type="loanType" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="disposal" minOccurs="0"/>
             <xs:element ref="direction" minOccurs="0"/>
-            <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:element name="agents" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Either one agent or a number of agents grouped in the agents element can be present</xs:documentation>
                 </xs:annotation>
-                <xs:element ref="agent" minOccurs="0"/>
-                <xs:element name="agents" minOccurs="0">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element ref="agent" minOccurs="0" maxOccurs="unbounded"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-            </xs:choice>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="agent" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
             <xs:element ref="description" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Mandatory if title is missing</xs:documentation>
@@ -256,7 +254,7 @@
                     <xs:documentation xml:lang="en">Grouping of dates belonging to the record</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element ref="action" minOccurs="0"/>
+            <xs:element ref="action" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="archivalHistory" minOccurs="0"/>
             <xs:element ref="dispatchMode" minOccurs="0"/>
             <xs:element ref="access" minOccurs="0"/>
@@ -266,7 +264,7 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element ref="physicalLocation" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="physicalLocation" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -1250,6 +1248,9 @@
                         <xs:enumeration value="has_rendition_version"/>
                         <xs:enumeration value="is_child_of"/>
                         <xs:enumeration value="is_parent_of"/>
+                        <xs:enumeration value="moved"/>
+                        <xs:enumeration value="moved_from"/>
+                        <xs:enumeration value="deleted"/>
                         <xs:enumeration value="own_relation_definition"/>
                     </xs:restriction>
                 </xs:simpleType>
@@ -1303,7 +1304,7 @@
 
     <xs:complexType name="actionType">
         <xs:annotation>
-            <xs:documentation xml:lang="en">Definition of all elements involved in a action. The action can for example be an decision</xs:documentation>
+            <xs:documentation xml:lang="en">Definition of all elements involved in a action. The action can for example be an decision.</xs:documentation>
         </xs:annotation>
         <xs:sequence>
             <xs:element name="actionText" type="xs:string">
@@ -1529,7 +1530,7 @@
 
     <xs:element name="status">
         <xs:annotation>
-            <xs:documentation xml:lang="en">Current status of the aggregation</xs:documentation>
+            <xs:documentation xml:lang="en">Current status of the aggregation or record.</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:attribute name="value" use="optional">
