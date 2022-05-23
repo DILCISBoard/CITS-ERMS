@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<OwnElement>
-    <OwnElementDescription>Own element used for detailing accounting information</OwnElementDescription>
-    <OwnElement Name="Responsible unit" DataType="String" Format="Used accounting system">
-        <Value>3456/206/86176</Value>
-        <Property>
-            <Attribute Name="Accountning information">
-                <Value>Se-1234-3214-444</Value>
-            </Attribute>
-        </Property>
-    </OwnElement>
-</OwnElement>
-<OwnElement>
-    <OwnElementDescription>Own element used for detailing accounting information and value representing the accountant</OwnElementDescription>
-    <OwnElement Name="Responsible unit" DataType="String" Format="Used accounting system">
-        <Value>3456/206/86176</Value>
-        <Property>
-            <Attribute Name="Accountning information">
-                <Value>Se-1234-3214-444</Value>
-            </Attribute>
-        </Property>
-        <OwnElement Name="Accountant" DataType="String" Format="Username">
-            <Value>MARJAAS</Value>
-        </OwnElement>
-    </OwnElement>
-</OwnElement>
-<OwnElement>
-    <OwnElementDescription>Comments regarding the system</OwnElementDescription>
-    <OwnElement Name="Comment" DataType="String">
-        <Value>System comment 1</Value>
-    </OwnElement>
-    <OwnElement Name="Comment" DataType="String">
-        <Value>System comment 2</Value>
-    </OwnElement>
-</OwnElement>
+<ownElement>
+    <ownElementDescription>Own element used for detailing accounting information</ownElementDescription>
+    <ownElement name="Responsible unit" dataType="String" format="Used accounting system">
+        <value>3456/206/86176</value>
+        <property>
+            <attribute name="Accountning information">
+                <value>Se-1234-3214-444</value>
+            </attribute>
+        </property>
+    </ownElement>
+</ownElement>
+<ownElement>
+    <ownElementDescription>Own element used for detailing accounting information and value representing the accountant</ownElementDescription>
+    <ownElement name="Responsible unit" dataType="String" format="Used accounting system">
+        <value>3456/206/86176</value>
+        <property>
+            <attribute name="Accountning information">
+                <value>Se-1234-3214-444</value>
+            </attribute>
+        </property>
+        <ownElement name="Accountant" dataType="String" format="Username">
+            <value>MARJAAS</value>
+        </ownElement>
+    </ownElement>
+</ownElement>
+<ownElement>
+    <ownElementDescription>Comments regarding the system</ownElementDescription>
+    <ownElement name="Comment" dataType="String">
+        <value>System comment 1</value>
+    </ownElement>
+    <ownElement name="Comment" dataType="String">
+        <value>System comment 2</value>
+    </ownElement>
+</ownElement>
