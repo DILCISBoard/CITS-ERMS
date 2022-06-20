@@ -69,7 +69,8 @@
             <xs:element ref="informationClass" minOccurs="0"/>
             <xs:element ref="securityClass" minOccurs="0"/>
             <xs:element ref="identification" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element ref="classification" minOccurs="0"/>
+            <!-- 20220620 KB bug fix following issue https://github.com/DILCISBoard/CITS-ERMS/issues/16 -->
+            <xs:element ref="classification" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="parentAggregationId" minOccurs="0"/>
             <xs:element ref="hierarchicalParentClassId" minOccurs="0"/>
             <xs:element ref="maxLevelsOfAggregation" minOccurs="0"/>
