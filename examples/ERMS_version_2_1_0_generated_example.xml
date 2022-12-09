@@ -137,9 +137,9 @@
             <subject>subject0</subject>
             <subject>subject1</subject>
             <status value="ad_acta"/>
-            <relation relationType="replaces" oherRelationType="oherRelationType1">
+            <relation relationType="replaces" otherRelationType="otherRelationType1">
             </relation>
-            <relation relationType="replaces" oherRelationType="oherRelationType3">
+            <relation relationType="replaces" otherRelationType="otherRelationType3">
             </relation>
             <additionalInformation>
                 <appendix disposable="false" name="name15" description="description7" fileFormat="fileFormat7" originalFileFormat="originalFileFormat7"
@@ -543,9 +543,9 @@
                 <subject>subject2</subject>
                 <subject>subject3</subject>
                 <status value="ad_acta"/>
-                <relation relationType="replaces" oherRelationType="oherRelationType5">
+                <relation relationType="replaces" otherRelationType="otherRelationType5">
                 </relation>
-                <relation relationType="replaces" oherRelationType="oherRelationType7">
+                <relation relationType="replaces" otherRelationType="otherRelationType7">
                 </relation>
                 <additionalInformation>
                     <appendix disposable="false" name="name35" description="description19" fileFormat="fileFormat19" originalFileFormat="originalFileFormat19"
@@ -771,9 +771,9 @@
                     <subject>subject5</subject>
                     <status value="ad_acta"/>
                     <runningNumber>0</runningNumber>
-                    <relation relationType="replaces" oherRelationType="oherRelationType9">
+                    <relation relationType="replaces" otherRelationType="otherRelationType9">
                     </relation>
-                    <relation relationType="replaces" oherRelationType="oherRelationType11">
+                    <relation relationType="replaces" otherRelationType="otherRelationType11">
                     </relation>
                     <restriction restrictionType="confidential" otherRestrictionType="otherRestrictionType9">
                         <regulation>regulation4</regulation>
@@ -850,9 +850,9 @@
                     <subject>subject7</subject>
                     <status value="ad_acta"/>
                     <runningNumber>0</runningNumber>
-                    <relation relationType="replaces" oherRelationType="oherRelationType13">
+                    <relation relationType="replaces" otherRelationType="otherRelationType13">
                     </relation>
-                    <relation relationType="replaces" oherRelationType="oherRelationType15">
+                    <relation relationType="replaces" otherRelationType="otherRelationType15">
                     </relation>
                     <restriction restrictionType="confidential" otherRestrictionType="otherRestrictionType13">
                         <regulation>regulation6</regulation>
@@ -931,9 +931,9 @@
                 <subject>subject8</subject>
                 <subject>subject9</subject>
                 <status value="ad_acta"/>
-                <relation relationType="replaces" oherRelationType="oherRelationType17">
+                <relation relationType="replaces" otherRelationType="otherRelationType17">
                 </relation>
-                <relation relationType="replaces" oherRelationType="oherRelationType19">
+                <relation relationType="replaces" otherRelationType="otherRelationType19">
                 </relation>
                 <additionalInformation>
                     <appendix disposable="false" name="name39" description="description23" fileFormat="fileFormat23" originalFileFormat="originalFileFormat23"
@@ -1159,9 +1159,9 @@
                     <subject>subject11</subject>
                     <status value="ad_acta"/>
                     <runningNumber>0</runningNumber>
-                    <relation relationType="replaces" oherRelationType="oherRelationType21">
+                    <relation relationType="replaces" otherRelationType="otherRelationType21">
                     </relation>
-                    <relation relationType="replaces" oherRelationType="oherRelationType23">
+                    <relation relationType="replaces" otherRelationType="otherRelationType23">
                     </relation>
                     <restriction restrictionType="confidential" otherRestrictionType="otherRestrictionType21">
                         <regulation>regulation10</regulation>
@@ -1238,9 +1238,9 @@
                     <subject>subject13</subject>
                     <status value="ad_acta"/>
                     <runningNumber>0</runningNumber>
-                    <relation relationType="replaces" oherRelationType="oherRelationType25">
+                    <relation relationType="replaces" otherRelationType="otherRelationType25">
                     </relation>
-                    <relation relationType="replaces" oherRelationType="oherRelationType27">
+                    <relation relationType="replaces" otherRelationType="otherRelationType27">
                     </relation>
                     <restriction restrictionType="confidential" otherRestrictionType="otherRestrictionType25">
                         <regulation>regulation12</regulation>
@@ -1320,9 +1320,9 @@
             <subject>subject14</subject>
             <subject>subject15</subject>
             <status value="ad_acta"/>
-            <relation relationType="replaces" oherRelationType="oherRelationType29">
+            <relation relationType="replaces" otherRelationType="otherRelationType29">
             </relation>
-            <relation relationType="replaces" oherRelationType="oherRelationType31">
+            <relation relationType="replaces" otherRelationType="otherRelationType31">
             </relation>
             <additionalInformation>
                 <appendix disposable="false" name="name43" description="description27" fileFormat="fileFormat27" originalFileFormat="originalFileFormat27"
@@ -1724,9 +1724,9 @@
                 <subject>subject17</subject>
                 <status value="ad_acta"/>
                 <runningNumber>0</runningNumber>
-                <relation relationType="replaces" oherRelationType="oherRelationType33">
+                <relation relationType="replaces" otherRelationType="otherRelationType33">
                 </relation>
-                <relation relationType="replaces" oherRelationType="oherRelationType35">
+                <relation relationType="replaces" otherRelationType="otherRelationType35">
                 </relation>
                 <restriction restrictionType="confidential" otherRestrictionType="otherRestrictionType33">
                     <explanatoryText>explanatoryText8</explanatoryText>
@@ -1955,9 +1955,9 @@
                 <subject>subject19</subject>
                 <status value="ad_acta"/>
                 <runningNumber>0</runningNumber>
-                <relation relationType="replaces" oherRelationType="oherRelationType37">
+                <relation relationType="replaces" otherRelationType="otherRelationType37">
                 </relation>
-                <relation relationType="replaces" oherRelationType="oherRelationType39">
+                <relation relationType="replaces" otherRelationType="otherRelationType39">
                 </relation>
                 <restriction restrictionType="confidential" otherRestrictionType="otherRestrictionType37">
                     <explanatoryText>explanatoryText10</explanatoryText>
