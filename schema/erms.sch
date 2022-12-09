@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- E-ARK ERMS Schematron rules version 2.1.2 -->
 <!-- E-ARK ERMS Schematron rules version 2.1 -->
 <!-- E-ARK ERMS Schematron rules version 1.0 -->
 <schema xmlns="http://purl.oclc.org/dsdl/schematron"
@@ -35,7 +36,7 @@
             <assert test="normalize-space(@otherRestrictionType)"> If the value of attribute <emph>restrictionType</emph> is 'other_type', then the <emph>otherRestrictionType</emph> attribute should be used </assert>
         </rule>
         <rule context="*[@relationType = 'own_relation_definition']">
-            <assert test="normalize-space(@oherRelationType)"> If the value of attribute <emph>relationType</emph> is 'own_relation_definition', then the <emph>otherRelationType</emph> attribute should be used </assert>
+            <assert test="normalize-space(@otherRelationType)"> If the value of attribute <emph>relationType</emph> is 'own_relation_definition', then the <emph>otherRelationType</emph> attribute should be used </assert>
         </rule>
     </pattern>
 
