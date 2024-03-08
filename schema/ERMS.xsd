@@ -402,7 +402,7 @@
         </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute name="adressType" use="required">
+                <xs:attribute name="addressType" use="required">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
                             <xs:enumeration value="postal_address"/>
@@ -530,14 +530,23 @@
                     <xs:documentation xml:lang="en">Role of the agent</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="addressContactInformation" minOccurs="0">
+            <xs:element name="addressInformation" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation xml:lang="en">Address and contact information</xs:documentation>
+                    <xs:documentation xml:lang="en">Address information</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="addressLine" type="addressLineType" minOccurs="1"
                             maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="contactInformation" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">Contact information</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
                         <xs:element name="contactLine" type="contactLineType" minOccurs="1"
                             maxOccurs="unbounded"/>
                     </xs:sequence>
