@@ -1059,9 +1059,10 @@
                     <xs:documentation xml:lang="en">Information class for the whole document based on information security classification</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element ref="classificationSchema" minOccurs="0">
+            <xs:element ref="classificationSchema" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Element for describing the used classification schema in the XML-document</xs:documentation>
+                    <xs:documentation xml:lang="en">2024-05-17, following user input the occurance is changed to unbounded.</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element ref="securityClass" minOccurs="0">
