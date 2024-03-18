@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!-- E-ARK ERMS schema version 2.2.0 2024-05-17 -->
 <!-- E-ARK ERMS schema version 2.1.3 2023-11-03 -->
 <!-- E-ARK ERMS schema version 2.1.2 2022-12-09 -->
 <!-- E-ARK ERMS schema version 2.1.1 2022-06-20 -->
@@ -401,10 +402,11 @@
     <xs:complexType name="addressLineType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of all different kinds of address line types that can be used. Can have value other with thenn own created extending value.</xs:documentation>
+            <xs:documentation xml:lang="en">2024-05-17 update of the attribute name to follow the specification. adressType -> addressType </xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute name="adressType" use="required">
+                <xs:attribute name="addressType" use="required">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
                             <xs:enumeration value="postal_address"/>
