@@ -533,13 +533,12 @@
             <xs:element name="addressContactInformation" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Address and contact information</xs:documentation>
+                    <xs:documentation xml:lang="en">2024-05-17, update so its possible to as a minimum to have either one addressLine or one contactLine, which is checked with the Schematron rule</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="addressLine" type="addressLineType" minOccurs="1"
-                            maxOccurs="unbounded"/>
-                        <xs:element name="contactLine" type="contactLineType" minOccurs="1"
-                            maxOccurs="unbounded"/>
+                        <xs:element name="addressLine" type="addressLineType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="contactLine" type="contactLineType" minOccurs="0" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -939,7 +938,7 @@
         </xs:sequence>
         <xs:attribute name="restrictionType" use="required">
             <xs:annotation>
-                <xs:documentation xml:lang="en">Defines the type of the restriction using the value "other type" gives the opportunity to use a customised (own) extending value in the attribue "OtherRestrictionType"</xs:documentation>
+                <xs:documentation xml:lang="en">Defines the type of the restriction using the value "other type" gives the opportunity to use a customised (own) extending value in the attribue "otherRestrictionType"</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
                 <xs:restriction base="xs:string">
