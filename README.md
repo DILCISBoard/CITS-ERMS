@@ -13,6 +13,3 @@ This is the XML-schema supporting the requirements in the specification.
 ## Erms.sch
 This is the Schematron document which extends some of the validation rules within the ERMS.xsd.
 
-## ERMS.pdf
-This is the documentation to the XML-schema.
-
