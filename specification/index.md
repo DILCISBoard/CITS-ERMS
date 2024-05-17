@@ -10,4 +10,4 @@ Latest
 
 Archived
 ------
-- [CITS ERMS PDF](./CITS_ERMS_v2.1.0.pdf) Version 2.1.0 31-08-2021
+- [CITS ERMS PDF](./archive/CITS_ERMS_v2.1.0.pdf) Version 2.1.0 31-08-2021
