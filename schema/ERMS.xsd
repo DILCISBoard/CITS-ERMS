@@ -223,6 +223,7 @@
     <xs:complexType name="recordType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of one record and its elements and attributes</xs:documentation>
+            <xs:documentation xml:lang="en">2024-05-17, element classification made repetable</xs:documentation>
         </xs:annotation>
         <xs:sequence>
             <xs:element ref="objectId"/>
@@ -230,7 +231,7 @@
             <xs:element ref="informationClass" minOccurs="0"/>
             <xs:element ref="securityClass" minOccurs="0"/>
             <xs:element ref="identification" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element ref="classification" minOccurs="0"/>
+            <xs:element ref="classification" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="parentAggregationId" minOccurs="0"/>
             <xs:element ref="levelName" minOccurs="0"/>
             <xs:element ref="keywords" minOccurs="0"/>
