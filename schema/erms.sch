@@ -41,8 +41,9 @@
         </rule>
         <rule context="erms:addressContactInformation">
             <assert test="count(erms:*) >=1">If element <emph>addressContactInformation</emph> is used it must have as a minimum one <emph>addressLine</emph> or one <emph>contactLine</emph> present</assert>    
+      </rule>
+        <rule context="*[@classificationSchemaStatus = 'other']">
+            <assert test="normalize-space(@otherclassificationSchemaStatus)"> If the value of the <emph>classificationSchemaStatus</emph> attribute is "other', then the <emph>otherClassificationSchemaStatus</emph> attribute must be used. </assert>
         </rule>
-    </pattern>
-
-   
+    </pattern>   
 </schema>
