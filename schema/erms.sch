@@ -38,7 +38,10 @@
         <rule context="*[@relationType = 'own_relation_definition']">
             <assert test="normalize-space(@otherRelationType)"> If the value of attribute <emph>relationType</emph> is 'own_relation_definition', then the <emph>otherRelationType</emph> attribute should be used </assert>
         </rule>
+        <rule context="*[@classificationSchemaStatus = 'other']">
+            <assert test="normalize-space(@otherclassificationSchemaStatus)"> If the value of the <emph>classificationSchemaStatus</emph> attribute is "other', then the <emph>otherClassificationSchemaStatus</emph> attribute must be used. </assert>
+        </rule>
     </pattern>
-
+    
    
 </schema>

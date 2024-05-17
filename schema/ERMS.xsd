@@ -197,6 +197,12 @@
                 <xs:documentation xml:lang="en">When value "own_aggregation_definition" is used the attribute otherAggregationType is used to describe the aggegation type</xs:documentation>
             </xs:annotation>
         </xs:attribute>
+        <xs:attribute name="classificationSchemaUsed" type="xs:IDREF" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">A link to the classification schema that the aggregation is following</xs:documentation>
+                <xs:documentation xml:lang="en">2024-05-17 new attribute</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
     </xs:complexType>
 
     <xs:element name="records" type="recordsType">
@@ -328,6 +334,12 @@
                     <xs:enumeration value="does_not_apply"/>
                 </xs:restriction>
             </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="classificationSchemaUsed" type="xs:IDREF" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">A link to the classification schema that the aggregation is following</xs:documentation>
+                <xs:documentation xml:lang="en">2024-05-17 new attribute</xs:documentation>
+            </xs:annotation>
         </xs:attribute>
     </xs:complexType>
 
@@ -1059,9 +1071,10 @@
                     <xs:documentation xml:lang="en">Information class for the whole document based on information security classification</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element ref="classificationSchema" minOccurs="0">
+            <xs:element ref="classificationSchema" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Element for describing the used classification schema in the XML-document</xs:documentation>
+                    <xs:documentation xml:lang="en">2024-05-17, following user input the occurance is changed to unbounded.</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element ref="securityClass" minOccurs="0">
@@ -1611,9 +1624,32 @@
     <xs:element name="classificationSchema">
         <xs:annotation>
             <xs:documentation xml:lang="en">Element for describing the classification schema used in the XML-document</xs:documentation>
+            <xs:documentation xml:lang="en">2024-05-17 Element enhanced with possibility to connect an aggregation and/or record with the correct classification schema</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
+                <xs:element name="useDatePeriod" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">The period when the classification schema was used in the form of a xs:date</xs:documentation>
+                        <xs:documentation xml:lang="en">2024-05-17 new element</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="fromDate" type="xs:date">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="en">The date when the classification schema was started to be used</xs:documentation>
+                                    <xs:documentation xml:lang="en">2024-05-17 new element</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="toDate" type="xs:date" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="en">The date when the classification schema was stopped to be used. If the classification is still in use the toDate is not needed to be present</xs:documentation>
+                                    <xs:documentation xml:lang="en">2024-05-17 new element</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
                 <xs:element name="textualDescriptionOfClassificationSchema" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">A textual description of the classifications schema made in a customised (own) choice of element p</xs:documentation>
@@ -1634,6 +1670,31 @@
                     </xs:annotation>
                 </xs:element>
             </xs:sequence>
+            <xs:attribute name="classificationSchemaId" type="xs:ID">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">A mandatory identification of the classification schema to allow to connect the aggregation or record to the correct classification schema</xs:documentation>
+                    <xs:documentation xml:lang="en">2024-05-17 new attribute</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="classificationSchemaStatus">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">The status of the classification schema. When the value other is used the attribute otherStatus is used to give an explanation</xs:documentation>
+                    <xs:documentation xml:lang="en">2024-05-17 new attribute</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="current"/>
+                        <xs:enumeration value="previous"/>
+                        <xs:enumeration value="other"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="otherClassificationSchemaStatus" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">When the classificationSchemaStatus attribute have the value "other" the otherClassificationSchemaStatus attribute is used to give the status for the cllassification schema</xs:documentation>
+                    <xs:documentation xml:lang="en">2024-05-17 new attribute</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
         </xs:complexType>
     </xs:element>
 
