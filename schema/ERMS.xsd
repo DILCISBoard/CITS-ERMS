@@ -569,6 +569,7 @@
             <xs:annotation>
                 <xs:documentation xml:lang="en">Required typing of the agent. When set to the value other a customised (own) extending value can be given with the attribute OtherAgentType</xs:documentation>
                 <xs:documentation xml:lang="en">2020-02-11 update in value list. "Authorizing person" -> "Authorising person"</xs:documentation>
+                <xs:documentation xml:lang="en">2024-05-17 update in value list. Addition of value, contact_person</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
                 <xs:restriction base="xs:string">
@@ -577,6 +578,7 @@
                     <xs:enumeration value="archiver"/>
                     <xs:enumeration value="authorising_person"/>
                     <xs:enumeration value="borrower"/>
+                    <xs:enumeration value="contact_person"/>
                     <xs:enumeration value="counterpart"/>
                     <xs:enumeration value="creator"/>
                     <xs:enumeration value="custodian"/>
