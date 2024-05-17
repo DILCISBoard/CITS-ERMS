@@ -514,6 +514,7 @@
     <xs:complexType name="agentComplexType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of one agent and its elements and attributes</xs:documentation>
+            <xs:documentation xml:lang="en">2024-05-17, addition of an optional notes/note element</xs:documentation>
         </xs:annotation>
         <xs:sequence>
             <xs:element ref="name">
@@ -563,6 +564,16 @@
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Person has protected identity</xs:documentation>
                 </xs:annotation>
+            </xs:element>
+            <xs:element name="notes" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">Either one note or a number of notes grouped in the notes element can be present</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="note" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
             </xs:element>
         </xs:sequence>
         <xs:attribute name="agentType" use="required">
