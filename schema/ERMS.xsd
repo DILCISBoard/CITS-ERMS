@@ -941,6 +941,7 @@
     <xs:complexType name="restrictionsType">
         <xs:annotation>
             <xs:documentation xml:lang="en">Definition of the type for describing restrictions</xs:documentation>
+            <xs:documentation xml:lang="en">2024-05-17, addtion of an optional agent element</xs:documentation>
         </xs:annotation>
         <xs:sequence>
             <xs:element name="explanatoryText" minOccurs="0" type="xs:string">
@@ -955,6 +956,11 @@
             </xs:element>
             <xs:element ref="informationClass" minOccurs="0"/>
             <xs:element ref="securityClass" minOccurs="0"/>
+            <xs:element name="agent" type="agentComplexType" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">Agents involved in the restriction</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="dates" minOccurs="0" maxOccurs="unbounded" type="datesType">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Dates for the restriction</xs:documentation>
