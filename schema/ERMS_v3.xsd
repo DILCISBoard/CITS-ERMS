@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!-- E-ARK ERMS schema version 3.0.1 2024-08-22 -->
 <!-- E-ARK ERMS schema version 3.0.0 2024-05-17 -->
 <!-- E-ARK ERMS schema version 2.1.3 2023-11-03 -->
 <!-- E-ARK ERMS schema version 2.1.2 2022-12-09 -->
@@ -326,12 +327,13 @@
                 <xs:documentation xml:lang="en">State whether the record is physical, digital, both or if the statment dont apply.</xs:documentation>
                 <xs:documentation xml:lang="en">2020-02-11 update of value list. "Dont apply" -> "Does not apply" </xs:documentation>
                 <xs:documentation xml:lang="en">2023-11-02 update of value list. "digitial" -> "digital"</xs:documentation>
+                <xs:documentation xml:lang="en">2024-08-22 update of value list. "physcical_and_digital" -> "physical_and_digital"</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
                 <xs:restriction base="xs:string">
                     <xs:enumeration value="physical"/>
                     <xs:enumeration value="digital"/>
-                    <xs:enumeration value="physcical_and_digital"/>
+                    <xs:enumeration value="physical_and_digital"/>
                     <xs:enumeration value="does_not_apply"/>
                 </xs:restriction>
             </xs:simpleType>
