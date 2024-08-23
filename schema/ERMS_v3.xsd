@@ -1263,6 +1263,7 @@
             <xs:documentation xml:lang="en">Reference to one or more records or aggregations</xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
+            <xs:attribute name="name" type="xs:string" use="optional"/>
             <xs:attribute name="relationType" use="required">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">Describes the relation. Value "Own relation definition" demands use of otherType attribute</xs:documentation>
